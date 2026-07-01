@@ -1,0 +1,85 @@
+2026-06-17 01:09:41,705 Evaluating log/20260616-111723...
+2026-06-17 01:09:41,984 Namespace(dataset='coco', embed_size=1536, img_res=384, change_lr=0.1, sim='i2t', lora_type='qkv', imageEncoder_type='vit', freeze_backbone=False, lora=False, cut_size=384, distill=False, text_mask_rate=0.15, max_word=100, batch_size=128, workers=4, learning_rate=0.0002, multi_gpu=0, gpu_id=0, seed=0, num_epochs=30, margin=0.3, gpo_size1=32, gpo_size2=32, loss_type='vse', grad_clip=2.0, max_violation=False, vse_mean_warmup_epochs=1, embedding_warmup_epochs=0, data_path='data', log_step=200, val_step=500, f30k_img_path='data/flickr30k_images', coco_img_path='data/coco_images', self_img_path='data/self_images', world_size=1, rank=0, local_rank=0, token_compress=False, dist_backend='nccl', dist_url='env://', size_augment=1, eval=1, save_results=1, evaluate_cxc=0, bert_path='../weights_models/bert-base-uncased', hugging_face=True, shard_size=256, model_name='log/20260616-111723', logger_name='log/20260616-111723')
+2026-06-17 01:09:42,476 HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 01:09:42,591 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:09:43,213 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 01:09:43,326 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:09:43,790 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 01:09:43,858 Loading dataset
+2026-06-17 01:09:43,899 Computing results...
+2026-06-17 01:09:45,590 Test: [0/196]		Batch-Time 1.690 (1.690)	
+2026-06-17 01:09:49,247 Test: [10/196]		Batch-Time 0.373 (0.486)	
+2026-06-17 01:09:52,910 Test: [20/196]		Batch-Time 0.365 (0.429)	
+2026-06-17 01:09:56,545 Test: [30/196]		Batch-Time 0.364 (0.408)	
+2026-06-17 01:10:00,196 Test: [40/196]		Batch-Time 0.362 (0.397)	
+2026-06-17 01:10:03,842 Test: [50/196]		Batch-Time 0.370 (0.391)	
+2026-06-17 01:10:07,487 Test: [60/196]		Batch-Time 0.365 (0.387)	
+2026-06-17 01:10:11,129 Test: [70/196]		Batch-Time 0.365 (0.384)	
+2026-06-17 01:10:14,808 Test: [80/196]		Batch-Time 0.376 (0.382)	
+2026-06-17 01:10:18,472 Test: [90/196]		Batch-Time 0.365 (0.380)	
+2026-06-17 01:10:22,145 Test: [100/196]		Batch-Time 0.366 (0.379)	
+2026-06-17 01:10:25,781 Test: [110/196]		Batch-Time 0.362 (0.377)	
+2026-06-17 01:10:29,438 Test: [120/196]		Batch-Time 0.372 (0.376)	
+2026-06-17 01:10:33,076 Test: [130/196]		Batch-Time 0.365 (0.375)	
+2026-06-17 01:10:36,727 Test: [140/196]		Batch-Time 0.362 (0.375)	
+2026-06-17 01:10:40,384 Test: [150/196]		Batch-Time 0.364 (0.374)	
+2026-06-17 01:10:44,024 Test: [160/196]		Batch-Time 0.362 (0.373)	
+2026-06-17 01:10:47,690 Test: [170/196]		Batch-Time 0.371 (0.373)	
+2026-06-17 01:10:51,372 Test: [180/196]		Batch-Time 0.362 (0.373)	
+2026-06-17 01:10:55,025 Test: [190/196]		Batch-Time 0.364 (0.372)	
+2026-06-17 01:10:56,599 Images: 5000, Captions: 25000
+2026-06-17 01:10:56,661 calculate similarity time: 0.06153273582458496
+2026-06-17 01:10:56,792 Image to text: 84.0, 98.2, 99.4
+2026-06-17 01:10:56,793 Text to image: 73.1, 94.1, 97.4
+2026-06-17 01:10:56,856 calculate similarity time: 0.0635826587677002
+2026-06-17 01:10:56,988 Image to text: 82.6, 96.2, 98.3
+2026-06-17 01:10:56,988 Text to image: 70.8, 92.4, 96.4
+2026-06-17 01:10:57,051 calculate similarity time: 0.06271934509277344
+2026-06-17 01:10:57,184 Image to text: 82.5, 97.1, 98.7
+2026-06-17 01:10:57,184 Text to image: 70.7, 92.6, 96.8
+2026-06-17 01:10:57,248 calculate similarity time: 0.0631101131439209
+2026-06-17 01:10:57,378 Image to text: 80.3, 96.3, 99.0
+2026-06-17 01:10:57,379 Text to image: 69.2, 92.8, 96.8
+2026-06-17 01:10:57,439 calculate similarity time: 0.06007790565490723
+2026-06-17 01:10:57,571 Image to text: 84.1, 96.9, 99.2
+2026-06-17 01:10:57,572 Text to image: 71.4, 93.4, 97.4
+2026-06-17 01:10:57,572 -----------------------------------
+2026-06-17 01:10:57,572 Mean metrics: 
+2026-06-17 01:10:57,572 rsum: 539.6
+2026-06-17 01:10:57,572 Image to text (R@1, R@5, R@10): 82.7 96.9 98.9
+2026-06-17 01:10:57,572 Text to image (R@1, R@5, R@10): 71.0 93.1 97.0
+2026-06-17 01:10:57,970 Namespace(dataset='coco', embed_size=1536, img_res=384, change_lr=0.1, sim='i2t', lora_type='qkv', imageEncoder_type='vit', freeze_backbone=False, lora=False, cut_size=384, distill=False, text_mask_rate=0.15, max_word=100, batch_size=128, workers=4, learning_rate=0.0002, multi_gpu=0, gpu_id=0, seed=0, num_epochs=30, margin=0.3, gpo_size1=32, gpo_size2=32, loss_type='vse', grad_clip=2.0, max_violation=False, vse_mean_warmup_epochs=1, embedding_warmup_epochs=0, data_path='data', log_step=200, val_step=500, f30k_img_path='data/flickr30k_images', coco_img_path='data/coco_images', self_img_path='data/self_images', world_size=1, rank=0, local_rank=0, token_compress=False, dist_backend='nccl', dist_url='env://', size_augment=1, eval=1, save_results=1, evaluate_cxc=0, bert_path='../weights_models/bert-base-uncased', hugging_face=True, shard_size=256, model_name='log/20260616-111723', logger_name='log/20260616-111723')
+2026-06-17 01:10:58,418 HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 01:10:58,748 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:10:58,968 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 01:10:59,078 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:10:59,197 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 01:10:59,682 Loading dataset
+2026-06-17 01:10:59,717 Computing results...
+2026-06-17 01:11:01,402 Test: [0/196]		Batch-Time 1.684 (1.683)	
+2026-06-17 01:11:05,053 Test: [10/196]		Batch-Time 0.372 (0.485)	
+2026-06-17 01:11:08,709 Test: [20/196]		Batch-Time 0.365 (0.428)	
+2026-06-17 01:11:12,341 Test: [30/196]		Batch-Time 0.364 (0.407)	
+2026-06-17 01:11:15,994 Test: [40/196]		Batch-Time 0.363 (0.397)	
+2026-06-17 01:11:19,640 Test: [50/196]		Batch-Time 0.371 (0.391)	
+2026-06-17 01:11:23,280 Test: [60/196]		Batch-Time 0.365 (0.386)	
+2026-06-17 01:11:26,926 Test: [70/196]		Batch-Time 0.365 (0.383)	
+2026-06-17 01:11:30,606 Test: [80/196]		Batch-Time 0.376 (0.381)	
+2026-06-17 01:11:34,273 Test: [90/196]		Batch-Time 0.366 (0.380)	
+2026-06-17 01:11:37,948 Test: [100/196]		Batch-Time 0.366 (0.379)	
+2026-06-17 01:11:41,585 Test: [110/196]		Batch-Time 0.362 (0.377)	
+2026-06-17 01:11:45,245 Test: [120/196]		Batch-Time 0.372 (0.376)	
+2026-06-17 01:11:48,887 Test: [130/196]		Batch-Time 0.366 (0.375)	
+2026-06-17 01:11:52,538 Test: [140/196]		Batch-Time 0.362 (0.375)	
+2026-06-17 01:11:56,200 Test: [150/196]		Batch-Time 0.365 (0.374)	
+2026-06-17 01:11:59,843 Test: [160/196]		Batch-Time 0.362 (0.373)	
+2026-06-17 01:12:03,520 Test: [170/196]		Batch-Time 0.373 (0.373)	
+2026-06-17 01:12:07,212 Test: [180/196]		Batch-Time 0.362 (0.373)	
+2026-06-17 01:12:10,866 Test: [190/196]		Batch-Time 0.365 (0.372)	
+2026-06-17 01:12:12,443 Images: 5000, Captions: 25000
+2026-06-17 01:12:14,496 Save the similarity into log/20260616-111723/results_coco.npy
+2026-06-17 01:12:14,497 calculate similarity time: 1.6149053573608398
+2026-06-17 01:12:18,209 rsum: 461.7
+2026-06-17 01:12:18,209 Image to text (R@1, R@5, R@10): 65.2 87.8 93.8
+2026-06-17 01:12:18,209 Text to image (R@1, R@5, R@10): 50.5 78.2 86.3
+2026-06-17 01:12:18,354 Evaluation finish!

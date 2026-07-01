@@ -1,0 +1,20 @@
+2026-06-17 17:13:15,532 Evaluating log/20260617-083647...
+2026-06-17 17:13:15,972 Namespace(dataset='f30k', embed_size=1536, img_res=384, change_lr=0.1, sim='i2t', lora_type='all', imageEncoder_type='swin', freeze_backbone=False, lora=False, cut_size=384, distill=False, text_mask_rate=0.15, max_word=100, batch_size=128, workers=4, learning_rate=0.0002, multi_gpu=0, gpu_id=0, seed=0, num_epochs=30, margin=0.3, gpo_size1=32, gpo_size2=32, loss_type='vse', grad_clip=2.0, max_violation=False, vse_mean_warmup_epochs=1, embedding_warmup_epochs=0, data_path='data', log_step=200, val_step=500, f30k_img_path='data/flickr30k_images', coco_img_path='data/coco_images', self_img_path='data/self_images', world_size=1, rank=0, local_rank=0, token_compress=False, dist_backend='nccl', dist_url='env://', size_augment=1, eval=1, save_results=1, evaluate_cxc=0, bert_path='../weights_models/bert-base-uncased', hugging_face=True, shard_size=256, model_name='log/20260617-083647', logger_name='log/20260617-083647')
+2026-06-17 17:13:16,482 HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 17:13:16,622 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 17:13:16,755 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 17:13:16,907 HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 17:13:17,053 HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 17:13:17,214 Loading dataset
+2026-06-17 17:13:17,226 Computing results...
+2026-06-17 17:13:19,524 Test: [0/40]		Batch-Time 2.295 (2.295)	
+2026-06-17 17:13:24,669 Test: [10/40]		Batch-Time 0.519 (0.676)	
+2026-06-17 17:13:29,812 Test: [20/40]		Batch-Time 0.515 (0.599)	
+2026-06-17 17:13:35,003 Test: [30/40]		Batch-Time 0.560 (0.573)	
+2026-06-17 17:13:39,237 Images: 1000, Captions: 5000
+2026-06-17 17:13:39,826 Save the similarity into log/20260617-083647/results_f30k.npy
+2026-06-17 17:13:39,826 calculate similarity time: 0.5686695575714111
+2026-06-17 17:13:39,982 rsum: 556.9
+2026-06-17 17:13:39,982 Image to text (R@1, R@5, R@10): 90.0 99.2 99.7
+2026-06-17 17:13:39,982 Text to image (R@1, R@5, R@10): 77.0 94.1 96.9
+2026-06-17 17:13:40,089 Evaluation finish!

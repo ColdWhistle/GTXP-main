@@ -1,0 +1,98 @@
+dataset
+	f30k
+embed_size
+	1536
+img_res
+	384
+change_lr
+	0.1
+sim
+	i2t
+lora_type
+	qkv
+imageEncoder_type
+	vit
+freeze_backbone
+	False
+lora
+	False
+cut_size
+	384
+distill
+	False
+text_mask_rate
+	0.15
+max_word
+	100
+batch_size
+	128
+workers
+	4
+learning_rate
+	0.0002
+multi_gpu
+	0
+gpu_id
+	0
+seed
+	0
+num_epochs
+	30
+margin
+	0.3
+gpo_size1
+	32
+gpo_size2
+	32
+loss_type
+	vse
+grad_clip
+	2.0
+max_violation
+	False
+vse_mean_warmup_epochs
+	1
+embedding_warmup_epochs
+	0
+data_path
+	data
+log_step
+	200
+val_step
+	500
+f30k_img_path
+	data/flickr30k_images
+coco_img_path
+	data/coco_images
+self_img_path
+	data/self_images
+world_size
+	1
+rank
+	0
+local_rank
+	0
+token_compress
+	False
+dist_backend
+	nccl
+dist_url
+	env://
+size_augment
+	1
+eval
+	1
+save_results
+	1
+evaluate_cxc
+	0
+bert_path
+	../weights_models/bert-base-uncased
+hugging_face
+	True
+shard_size
+	256
+model_name
+	log/20260617-011944
+logger_name
+	log/20260617-011944

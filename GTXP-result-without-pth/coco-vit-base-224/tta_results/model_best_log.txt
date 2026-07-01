@@ -1,0 +1,38 @@
+2026-06-16 11:24:51,871 - INFO - Model: model_best.pth
+2026-06-16 11:24:51,871 - INFO - Dataset: coco
+2026-06-16 11:24:51,871 - INFO - TTA: True
+2026-06-16 11:24:51,871 - INFO - Aggregation: max
+2026-06-16 11:24:51,871 - INFO - Log file: ./tta_results/model_best_log.txt
+2026-06-16 11:24:53,045 - INFO - Evaluating coco on 'testall', TTA=True, Agg=max
+2026-06-16 11:24:57,801 - INFO - TTA enabled, using 8 augmentations per image, aggregation: max
+2026-06-16 11:25:02,146 - INFO - Test: [0/196]		Batch-Time 4.345 (4.345)
+2026-06-16 11:25:26,546 - INFO - Test: [10/196]		Batch-Time 2.529 (2.613)
+2026-06-16 11:25:51,099 - INFO - Test: [20/196]		Batch-Time 2.448 (2.538)
+2026-06-16 11:26:15,227 - INFO - Test: [30/196]		Batch-Time 2.411 (2.498)
+2026-06-16 11:26:39,660 - INFO - Test: [40/196]		Batch-Time 2.432 (2.484)
+2026-06-16 11:27:04,145 - INFO - Test: [50/196]		Batch-Time 2.550 (2.477)
+2026-06-16 11:27:28,356 - INFO - Test: [60/196]		Batch-Time 2.483 (2.468)
+2026-06-16 11:27:52,606 - INFO - Test: [70/196]		Batch-Time 2.438 (2.462)
+2026-06-16 11:28:17,420 - INFO - Test: [80/196]		Batch-Time 2.601 (2.464)
+2026-06-16 11:28:42,085 - INFO - Test: [90/196]		Batch-Time 2.448 (2.465)
+2026-06-16 11:29:06,930 - INFO - Test: [100/196]		Batch-Time 2.419 (2.467)
+2026-06-16 11:29:31,108 - INFO - Test: [110/196]		Batch-Time 2.356 (2.462)
+2026-06-16 11:29:55,618 - INFO - Test: [120/196]		Batch-Time 2.523 (2.461)
+2026-06-16 11:30:20,016 - INFO - Test: [130/196]		Batch-Time 2.503 (2.460)
+2026-06-16 11:30:44,491 - INFO - Test: [140/196]		Batch-Time 2.410 (2.459)
+2026-06-16 11:31:09,059 - INFO - Test: [150/196]		Batch-Time 2.442 (2.459)
+2026-06-16 11:31:33,456 - INFO - Test: [160/196]		Batch-Time 2.377 (2.457)
+2026-06-16 11:31:58,232 - INFO - Test: [170/196]		Batch-Time 2.524 (2.459)
+2026-06-16 11:32:23,211 - INFO - Test: [180/196]		Batch-Time 2.373 (2.461)
+2026-06-16 11:32:47,774 - INFO - Test: [190/196]		Batch-Time 2.461 (2.461)
+2026-06-16 11:32:58,374 - INFO - Unique Images: 5000, Total Captions: 25000
+2026-06-16 11:33:06,776 - INFO - ------------------ Results (standard) ------------------
+2026-06-16 11:33:06,776 - INFO - Image to text: 59.2, 84.7, 91.2
+2026-06-16 11:33:06,776 - INFO - Text to image: 46.1, 74.7, 83.9
+2026-06-16 11:33:06,776 - INFO - Rsum: 439.7
+2026-06-16 11:33:06,797 - INFO - 
+========== 5-fold CV ==========
+2026-06-16 11:33:08,602 - INFO - ------------------ 5-fold CV Results ------------------
+2026-06-16 11:33:08,602 - INFO - Image to text: 79.1, 95.5, 98.4
+2026-06-16 11:33:08,602 - INFO - Text to image: 67.1, 91.5, 96.2
+2026-06-16 11:33:08,602 - INFO - Mean Rsum: 527.780000

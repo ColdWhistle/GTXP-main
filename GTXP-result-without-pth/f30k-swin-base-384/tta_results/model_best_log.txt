@@ -1,0 +1,16 @@
+2026-06-17 17:17:35,210 - INFO - Model: model_best.pth
+2026-06-17 17:17:35,211 - INFO - Dataset: f30k
+2026-06-17 17:17:35,211 - INFO - TTA: True
+2026-06-17 17:17:35,211 - INFO - Aggregation: max
+2026-06-17 17:17:35,211 - INFO - Log file: ./tta_results/model_best_log.txt
+2026-06-17 17:17:36,051 - INFO - Evaluating f30k on 'test', TTA=True, Agg=max
+2026-06-17 17:17:42,681 - INFO - TTA enabled, using 8 augmentations per image, aggregation: max
+2026-06-17 17:17:49,617 - INFO - Test: [0/40]		Batch-Time 6.936 (6.936)
+2026-06-17 17:18:30,448 - INFO - Test: [10/40]		Batch-Time 4.125 (4.342)
+2026-06-17 17:19:11,355 - INFO - Test: [20/40]		Batch-Time 4.094 (4.223)
+2026-06-17 17:19:52,500 - INFO - Test: [30/40]		Batch-Time 4.324 (4.188)
+2026-06-17 17:20:25,787 - INFO - Unique Images: 1000, Total Captions: 5000
+2026-06-17 17:20:26,018 - INFO - ------------------ Results (standard) ------------------
+2026-06-17 17:20:26,019 - INFO - Image to text: 90.9, 99.7, 99.8
+2026-06-17 17:20:26,019 - INFO - Text to image: 77.6, 94.5, 97.1
+2026-06-17 17:20:26,019 - INFO - Rsum: 559.5

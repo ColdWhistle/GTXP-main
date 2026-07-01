@@ -1,0 +1,608 @@
+2026-06-17 01:19:44 - INFO - Namespace(dataset='f30k', embed_size=1536, img_res=384, change_lr=0.1, sim='i2t', lora_type='qkv', imageEncoder_type='vit', freeze_backbone=False, lora=False, cut_size=384, distill=False, text_mask_rate=0.15, max_word=100, batch_size=128, workers=4, learning_rate=0.0002, multi_gpu=0, gpu_id=0, seed=0, num_epochs=30, margin=0.3, gpo_size1=32, gpo_size2=32, loss_type='vse', grad_clip=2.0, max_violation=False, vse_mean_warmup_epochs=1, embedding_warmup_epochs=0, data_path='data', log_step=200, val_step=500, f30k_img_path='data/flickr30k_images', coco_img_path='data/coco_images', self_img_path='data/self_images', world_size=1, rank=0, local_rank=0, token_compress=False, dist_backend='nccl', dist_url='env://', size_augment=1, eval=1, save_results=1, evaluate_cxc=0, bert_path='../weights_models/bert-base-uncased', hugging_face=True, shard_size=256, model_name='log/20260617-011944', logger_name='log/20260617-011944')
+2026-06-17 01:19:46 - INFO - HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 01:19:46 - INFO - HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:19:46 - INFO - HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 01:19:46 - INFO - HTTP Request: GET https://hf-mirror.com/api/models/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:19:47 - INFO - HTTP Request: GET https://hf-mirror.com/api/models/google-bert/bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 01:19:48 - INFO - HTTP Request: HEAD https://hf-mirror.com/google/vit-base-patch16-384/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:19:48 - INFO - HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/google/vit-base-patch16-384/2960116e809e2fca84146dbb240289aee7db4827/config.json "HTTP/1.1 200 OK"
+2026-06-17 01:19:48 - INFO - HTTP Request: HEAD https://hf-mirror.com/google/vit-base-patch16-384/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 01:19:48 - INFO - HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/google/vit-base-patch16-384/2960116e809e2fca84146dbb240289aee7db4827/config.json "HTTP/1.1 200 OK"
+2026-06-17 01:19:49 - INFO - HTTP Request: HEAD https://hf-mirror.com/google/vit-base-patch16-384/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 01:19:49 - INFO - HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-06-17 01:19:49 - INFO - HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-06-17 01:19:50 - INFO - HTTP Request: HEAD https://hf-mirror.com/bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 01:19:51 - INFO - Log saving path: log/20260617-011944
+2026-06-17 01:19:51 - INFO - Models saving path: log/20260617-011944
+2026-06-17 01:19:51 - INFO - Epoch 0: LR adjusted to 2.00e-05 (base: 2.00e-04)
+2026-06-17 01:19:51 - INFO - image encoder trainable parameters: 84.94M
+2026-06-17 01:19:51 - INFO - txt encoder trainable parameters: 113.44M
+2026-06-17 01:21:10 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:21:10 - INFO - Epoch: [0][100/1132]	Iter 199  lr 2e-05  Loss 596.9089 (3121.3278)	Batch-Time 0.76 (0.80)	Data 0.022 (0.037)	
+2026-06-17 01:22:26 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:22:26 - INFO - Epoch: [0][200/1132]	Iter 399  lr 2e-05  Loss 513.5313 (1832.1698)	Batch-Time 0.75 (0.78)	Data 0.022 (0.029)	
+2026-06-17 01:23:42 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:23:42 - INFO - Epoch: [0][300/1132]	Iter 599  lr 2e-05  Loss 307.5167 (1364.3470)	Batch-Time 0.76 (0.77)	Data 0.022 (0.026)	
+2026-06-17 01:24:59 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:24:59 - INFO - Epoch: [0][400/1132]	Iter 799  lr 2e-05  Loss 305.3302 (1109.8924)	Batch-Time 0.80 (0.77)	Data 0.021 (0.025)	
+2026-06-17 01:26:15 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:26:15 - INFO - Epoch: [0][500/1132]	Iter 999  lr 2e-05  Loss 503.7147 (952.8363)	Batch-Time 0.79 (0.77)	Data 0.019 (0.024)	
+2026-06-17 01:27:15 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:27:15 - INFO - Epoch: [0][600/1132]	Iter 1199  lr 2e-05  Loss 283.5815 (843.8041)	Batch-Time 0.37 (0.74)	Data 0.009 (0.023)	
+2026-06-17 01:27:53 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:27:53 - INFO - Epoch: [0][700/1132]	Iter 1399  lr 2e-05  Loss 208.3966 (766.7594)	Batch-Time 0.37 (0.69)	Data 0.009 (0.021)	
+2026-06-17 01:28:30 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:28:30 - INFO - Epoch: [0][800/1132]	Iter 1599  lr 2e-05  Loss 463.0773 (702.8401)	Batch-Time 0.37 (0.65)	Data 0.009 (0.019)	
+2026-06-17 01:29:08 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:29:08 - INFO - Epoch: [0][900/1132]	Iter 1799  lr 2e-05  Loss 230.6224 (653.0062)	Batch-Time 0.36 (0.62)	Data 0.005 (0.018)	
+2026-06-17 01:29:46 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:29:46 - INFO - Epoch: [0][1000/1132]	Iter 1999  lr 2e-05  Loss 187.7033 (611.2909)	Batch-Time 0.40 (0.60)	Data 0.004 (0.017)	
+2026-06-17 01:30:23 - INFO - The first epoch for training backbone, warmup alpha for loss is 0
+2026-06-17 01:30:23 - INFO - Epoch: [0][1100/1132]	Iter 2199  lr 2e-05  Loss 199.7686 (576.7459)	Batch-Time 0.42 (0.58)	Data 0.005 (0.016)	
+2026-06-17 01:30:37 - INFO - Test: [0/40]		Batch-Time 1.620 (1.620)	
+2026-06-17 01:30:46 - INFO - calculate similarity time: 0.163
+2026-06-17 01:30:46 - INFO - Image to text (R@1, R@5, R@10): 58.5, 86.4, 93.1
+2026-06-17 01:30:46 - INFO - Text to image (R@1, R@5, R@10): 44.9, 79.1, 88.4
+2026-06-17 01:30:46 - INFO - Current rsum is 450.4
+2026-06-17 01:30:46 - INFO - Epoch: [0], Best rsum: 450.4 
+
+2026-06-17 01:30:47 - INFO - Epoch 1: LR adjusted to 1.99e-05 (base: 2.00e-04)
+2026-06-17 01:31:14 - INFO - Epoch: [1][68/1132]	Iter 2399  lr 1.9947958005998597e-05  Loss 49.7924 (45.3062)	Batch-Time 0.36 (0.39)	Data 0.009 (0.025)	
+2026-06-17 01:31:51 - INFO - Epoch: [1][168/1132]	Iter 2599  lr 1.9947958005998597e-05  Loss 47.1462 (43.8627)	Batch-Time 0.37 (0.38)	Data 0.009 (0.015)	
+2026-06-17 01:32:28 - INFO - Epoch: [1][268/1132]	Iter 2799  lr 1.9947958005998597e-05  Loss 28.0439 (42.8549)	Batch-Time 0.38 (0.38)	Data 0.006 (0.013)	
+2026-06-17 01:33:04 - INFO - Epoch: [1][368/1132]	Iter 2999  lr 1.9947958005998597e-05  Loss 40.8366 (41.9390)	Batch-Time 0.39 (0.37)	Data 0.006 (0.011)	
+2026-06-17 01:33:41 - INFO - Epoch: [1][468/1132]	Iter 3199  lr 1.9947958005998597e-05  Loss 43.7451 (41.3635)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 01:34:19 - INFO - Epoch: [1][568/1132]	Iter 3399  lr 1.9947958005998597e-05  Loss 42.6844 (40.7310)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:34:56 - INFO - Epoch: [1][668/1132]	Iter 3599  lr 1.9947958005998597e-05  Loss 35.0284 (40.1433)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:35:33 - INFO - Epoch: [1][768/1132]	Iter 3799  lr 1.9947958005998597e-05  Loss 27.7548 (39.5476)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:36:10 - INFO - Epoch: [1][868/1132]	Iter 3999  lr 1.9947958005998597e-05  Loss 30.2732 (38.8796)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:36:47 - INFO - Epoch: [1][968/1132]	Iter 4199  lr 1.9947958005998597e-05  Loss 31.2057 (38.3074)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:37:24 - INFO - Epoch: [1][1068/1132]	Iter 4399  lr 1.9947958005998597e-05  Loss 29.2276 (37.7415)	Batch-Time 0.37 (0.37)	Data 0.009 (0.009)	
+2026-06-17 01:37:49 - INFO - Test: [0/40]		Batch-Time 1.271 (1.271)	
+2026-06-17 01:37:57 - INFO - calculate similarity time: 0.093
+2026-06-17 01:37:57 - INFO - Image to text (R@1, R@5, R@10): 74.0, 93.8, 97.5
+2026-06-17 01:37:58 - INFO - Text to image (R@1, R@5, R@10): 60.9, 88.3, 93.9
+2026-06-17 01:37:58 - INFO - Current rsum is 508.4
+2026-06-17 01:37:58 - INFO - Epoch: [1], Best rsum: 508.4 
+
+2026-06-17 01:38:00 - INFO - Epoch 2: LR adjusted to 1.98e-05 (base: 2.00e-04)
+2026-06-17 01:38:15 - INFO - Epoch: [2][36/1132]	Iter 4599  lr 1.9792402206971155e-05  Loss 27.6705 (27.0477)	Batch-Time 0.37 (0.39)	Data 0.009 (0.036)	
+2026-06-17 01:38:52 - INFO - Epoch: [2][136/1132]	Iter 4799  lr 1.9792402206971155e-05  Loss 23.5648 (27.2332)	Batch-Time 0.37 (0.38)	Data 0.009 (0.016)	
+2026-06-17 01:39:30 - INFO - Epoch: [2][236/1132]	Iter 4999  lr 1.9792402206971155e-05  Loss 24.2722 (27.2512)	Batch-Time 0.37 (0.38)	Data 0.009 (0.012)	
+2026-06-17 01:40:07 - INFO - Epoch: [2][336/1132]	Iter 5199  lr 1.9792402206971155e-05  Loss 22.5898 (27.1347)	Batch-Time 0.40 (0.38)	Data 0.007 (0.011)	
+2026-06-17 01:40:44 - INFO - Epoch: [2][436/1132]	Iter 5399  lr 1.9792402206971155e-05  Loss 23.5949 (27.1228)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 01:41:24 - INFO - Epoch: [2][536/1132]	Iter 5599  lr 1.9792402206971155e-05  Loss 26.0648 (26.8862)	Batch-Time 0.37 (0.38)	Data 0.009 (0.010)	
+2026-06-17 01:42:01 - INFO - Epoch: [2][636/1132]	Iter 5799  lr 1.9792402206971155e-05  Loss 19.6964 (26.8381)	Batch-Time 0.38 (0.38)	Data 0.005 (0.009)	
+2026-06-17 01:42:38 - INFO - Epoch: [2][736/1132]	Iter 5999  lr 1.9792402206971155e-05  Loss 30.1958 (26.7048)	Batch-Time 0.36 (0.38)	Data 0.009 (0.009)	
+2026-06-17 01:43:16 - INFO - Epoch: [2][836/1132]	Iter 6199  lr 1.9792402206971155e-05  Loss 24.9091 (26.5203)	Batch-Time 0.37 (0.38)	Data 0.009 (0.009)	
+2026-06-17 01:43:53 - INFO - Epoch: [2][936/1132]	Iter 6399  lr 1.9792402206971155e-05  Loss 24.4860 (26.4727)	Batch-Time 0.38 (0.38)	Data 0.005 (0.009)	
+2026-06-17 01:44:30 - INFO - Epoch: [2][1036/1132]	Iter 6599  lr 1.9792402206971155e-05  Loss 32.5959 (26.3451)	Batch-Time 0.36 (0.38)	Data 0.009 (0.009)	
+2026-06-17 01:45:07 - INFO - Test: [0/40]		Batch-Time 1.270 (1.270)	
+2026-06-17 01:45:16 - INFO - calculate similarity time: 0.097
+2026-06-17 01:45:16 - INFO - Image to text (R@1, R@5, R@10): 76.2, 94.4, 97.6
+2026-06-17 01:45:17 - INFO - Text to image (R@1, R@5, R@10): 63.6, 89.2, 94.3
+2026-06-17 01:45:17 - INFO - Current rsum is 515.2
+2026-06-17 01:45:17 - INFO - Epoch: [2], Best rsum: 515.2 
+
+2026-06-17 01:45:19 - INFO - Epoch 3: LR adjusted to 1.95e-05 (base: 2.00e-04)
+2026-06-17 01:45:22 - INFO - Epoch: [3][4/1132]	Iter 6799  lr 1.9535036904803962e-05  Loss 20.8059 (20.4590)	Batch-Time 0.38 (0.62)	Data 0.009 (0.252)	
+2026-06-17 01:45:59 - INFO - Epoch: [3][104/1132]	Iter 6999  lr 1.9535036904803962e-05  Loss 17.1476 (22.8615)	Batch-Time 0.41 (0.38)	Data 0.004 (0.018)	
+2026-06-17 01:46:36 - INFO - Epoch: [3][204/1132]	Iter 7199  lr 1.9535036904803962e-05  Loss 26.2774 (23.0197)	Batch-Time 0.37 (0.38)	Data 0.009 (0.013)	
+2026-06-17 01:47:14 - INFO - Epoch: [3][304/1132]	Iter 7399  lr 1.9535036904803962e-05  Loss 19.2171 (22.7433)	Batch-Time 0.37 (0.38)	Data 0.009 (0.011)	
+2026-06-17 01:47:51 - INFO - Epoch: [3][404/1132]	Iter 7599  lr 1.9535036904803962e-05  Loss 16.6745 (22.5257)	Batch-Time 0.37 (0.38)	Data 0.009 (0.011)	
+2026-06-17 01:48:29 - INFO - Epoch: [3][504/1132]	Iter 7799  lr 1.9535036904803962e-05  Loss 25.8345 (22.4434)	Batch-Time 0.39 (0.38)	Data 0.006 (0.010)	
+2026-06-17 01:49:05 - INFO - Epoch: [3][604/1132]	Iter 7999  lr 1.9535036904803962e-05  Loss 25.5877 (22.4820)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:49:44 - INFO - Epoch: [3][704/1132]	Iter 8199  lr 1.9535036904803962e-05  Loss 22.5012 (22.4348)	Batch-Time 0.37 (0.38)	Data 0.009 (0.010)	
+2026-06-17 01:50:22 - INFO - Epoch: [3][804/1132]	Iter 8399  lr 1.9535036904803962e-05  Loss 25.0429 (22.2581)	Batch-Time 0.37 (0.38)	Data 0.009 (0.009)	
+2026-06-17 01:50:59 - INFO - Epoch: [3][904/1132]	Iter 8599  lr 1.9535036904803962e-05  Loss 16.7019 (22.1974)	Batch-Time 0.40 (0.38)	Data 0.006 (0.009)	
+2026-06-17 01:51:36 - INFO - Epoch: [3][1004/1132]	Iter 8799  lr 1.9535036904803962e-05  Loss 20.6807 (22.1285)	Batch-Time 0.39 (0.38)	Data 0.005 (0.009)	
+2026-06-17 01:52:13 - INFO - Epoch: [3][1104/1132]	Iter 8999  lr 1.9535036904803962e-05  Loss 28.3343 (22.0011)	Batch-Time 0.36 (0.37)	Data 0.009 (0.009)	
+2026-06-17 01:52:25 - INFO - Test: [0/40]		Batch-Time 1.268 (1.268)	
+2026-06-17 01:52:33 - INFO - calculate similarity time: 0.063
+2026-06-17 01:52:34 - INFO - Image to text (R@1, R@5, R@10): 78.5, 96.7, 99.1
+2026-06-17 01:52:34 - INFO - Text to image (R@1, R@5, R@10): 65.9, 90.8, 95.5
+2026-06-17 01:52:34 - INFO - Current rsum is 526.6
+2026-06-17 01:52:34 - INFO - Epoch: [3], Best rsum: 526.6 
+
+2026-06-17 01:52:35 - INFO - Epoch 4: LR adjusted to 1.92e-05 (base: 2.00e-04)
+2026-06-17 01:53:03 - INFO - Epoch: [4][72/1132]	Iter 9199  lr 1.917868184760471e-05  Loss 19.5540 (18.0209)	Batch-Time 0.41 (0.39)	Data 0.006 (0.020)	
+2026-06-17 01:53:40 - INFO - Epoch: [4][172/1132]	Iter 9399  lr 1.917868184760471e-05  Loss 23.1180 (17.8997)	Batch-Time 0.38 (0.38)	Data 0.009 (0.013)	
+2026-06-17 01:54:18 - INFO - Epoch: [4][272/1132]	Iter 9599  lr 1.917868184760471e-05  Loss 14.2305 (18.1024)	Batch-Time 0.37 (0.38)	Data 0.009 (0.011)	
+2026-06-17 01:54:55 - INFO - Epoch: [4][372/1132]	Iter 9799  lr 1.917868184760471e-05  Loss 20.5519 (18.1440)	Batch-Time 0.36 (0.38)	Data 0.009 (0.010)	
+2026-06-17 01:55:32 - INFO - Epoch: [4][472/1132]	Iter 9999  lr 1.917868184760471e-05  Loss 23.5117 (18.0740)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:56:10 - INFO - Epoch: [4][572/1132]	Iter 10199  lr 1.917868184760471e-05  Loss 18.6315 (18.1663)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 01:56:47 - INFO - Epoch: [4][672/1132]	Iter 10399  lr 1.917868184760471e-05  Loss 15.4427 (18.1126)	Batch-Time 0.36 (0.38)	Data 0.009 (0.009)	
+2026-06-17 01:57:25 - INFO - Epoch: [4][772/1132]	Iter 10599  lr 1.917868184760471e-05  Loss 22.5344 (18.1860)	Batch-Time 0.39 (0.37)	Data 0.006 (0.009)	
+2026-06-17 01:58:02 - INFO - Epoch: [4][872/1132]	Iter 10799  lr 1.917868184760471e-05  Loss 13.7618 (18.1909)	Batch-Time 0.37 (0.37)	Data 0.010 (0.009)	
+2026-06-17 01:58:40 - INFO - Epoch: [4][972/1132]	Iter 10999  lr 1.917868184760471e-05  Loss 16.8526 (18.2356)	Batch-Time 0.36 (0.37)	Data 0.009 (0.009)	
+2026-06-17 01:59:17 - INFO - Epoch: [4][1072/1132]	Iter 11199  lr 1.917868184760471e-05  Loss 16.9058 (18.2784)	Batch-Time 0.36 (0.37)	Data 0.009 (0.009)	
+2026-06-17 01:59:40 - INFO - Test: [0/40]		Batch-Time 1.200 (1.200)	
+2026-06-17 01:59:48 - INFO - calculate similarity time: 0.072
+2026-06-17 01:59:48 - INFO - Image to text (R@1, R@5, R@10): 80.2, 96.6, 98.5
+2026-06-17 01:59:48 - INFO - Text to image (R@1, R@5, R@10): 67.4, 90.5, 94.9
+2026-06-17 01:59:48 - INFO - Current rsum is 528.2
+2026-06-17 01:59:48 - INFO - Epoch: [4], Best rsum: 528.2 
+
+2026-06-17 01:59:50 - INFO - Epoch 5: LR adjusted to 1.87e-05 (base: 2.00e-04)
+2026-06-17 02:00:06 - INFO - Epoch: [5][40/1132]	Iter 11399  lr 1.872724133595217e-05  Loss 14.1394 (16.7972)	Batch-Time 0.37 (0.39)	Data 0.009 (0.034)	
+2026-06-17 02:00:42 - INFO - Epoch: [5][140/1132]	Iter 11599  lr 1.872724133595217e-05  Loss 14.8617 (16.6892)	Batch-Time 0.37 (0.37)	Data 0.009 (0.016)	
+2026-06-17 02:01:19 - INFO - Epoch: [5][240/1132]	Iter 11799  lr 1.872724133595217e-05  Loss 16.9739 (16.6491)	Batch-Time 0.37 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:01:56 - INFO - Epoch: [5][340/1132]	Iter 11999  lr 1.872724133595217e-05  Loss 21.0399 (16.7256)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:02:32 - INFO - Epoch: [5][440/1132]	Iter 12199  lr 1.872724133595217e-05  Loss 11.1800 (16.8451)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:03:09 - INFO - Epoch: [5][540/1132]	Iter 12399  lr 1.872724133595217e-05  Loss 20.1747 (16.7351)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:03:45 - INFO - Epoch: [5][640/1132]	Iter 12599  lr 1.872724133595217e-05  Loss 20.0393 (16.6681)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:04:21 - INFO - Epoch: [5][740/1132]	Iter 12799  lr 1.872724133595217e-05  Loss 13.5177 (16.5297)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:04:58 - INFO - Epoch: [5][840/1132]	Iter 12999  lr 1.872724133595217e-05  Loss 14.4326 (16.4559)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:05:34 - INFO - Epoch: [5][940/1132]	Iter 13199  lr 1.872724133595217e-05  Loss 10.6885 (16.4656)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:06:11 - INFO - Epoch: [5][1040/1132]	Iter 13399  lr 1.872724133595217e-05  Loss 16.9906 (16.4526)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:06:45 - INFO - Test: [0/40]		Batch-Time 1.254 (1.254)	
+2026-06-17 02:06:54 - INFO - calculate similarity time: 0.073
+2026-06-17 02:06:54 - INFO - Image to text (R@1, R@5, R@10): 81.5, 97.2, 98.9
+2026-06-17 02:06:54 - INFO - Text to image (R@1, R@5, R@10): 68.8, 91.4, 95.5
+2026-06-17 02:06:54 - INFO - Current rsum is 533.3
+2026-06-17 02:06:54 - INFO - Epoch: [5], Best rsum: 533.3 
+
+2026-06-17 02:06:56 - INFO - Epoch 6: LR adjusted to 1.82e-05 (base: 2.00e-04)
+2026-06-17 02:07:00 - INFO - Epoch: [6][8/1132]	Iter 13599  lr 1.8185661446562e-05  Loss 11.4524 (13.6030)	Batch-Time 0.37 (0.49)	Data 0.009 (0.125)	
+2026-06-17 02:07:37 - INFO - Epoch: [6][108/1132]	Iter 13799  lr 1.8185661446562e-05  Loss 15.8601 (13.9665)	Batch-Time 0.37 (0.37)	Data 0.009 (0.018)	
+2026-06-17 02:08:13 - INFO - Epoch: [6][208/1132]	Iter 13999  lr 1.8185661446562e-05  Loss 13.6305 (14.1316)	Batch-Time 0.37 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:08:50 - INFO - Epoch: [6][308/1132]	Iter 14199  lr 1.8185661446562e-05  Loss 13.4008 (14.2618)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:09:26 - INFO - Epoch: [6][408/1132]	Iter 14399  lr 1.8185661446562e-05  Loss 20.7974 (14.3616)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:10:03 - INFO - Epoch: [6][508/1132]	Iter 14599  lr 1.8185661446562e-05  Loss 15.1238 (14.4720)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:10:39 - INFO - Epoch: [6][608/1132]	Iter 14799  lr 1.8185661446562e-05  Loss 13.4081 (14.4848)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:11:16 - INFO - Epoch: [6][708/1132]	Iter 14999  lr 1.8185661446562e-05  Loss 14.7818 (14.4537)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:11:52 - INFO - Epoch: [6][808/1132]	Iter 15199  lr 1.8185661446562e-05  Loss 20.5066 (14.5753)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:12:29 - INFO - Epoch: [6][908/1132]	Iter 15399  lr 1.8185661446562e-05  Loss 13.8631 (14.6564)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:13:05 - INFO - Epoch: [6][1008/1132]	Iter 15599  lr 1.8185661446562e-05  Loss 18.4408 (14.7078)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:13:42 - INFO - Epoch: [6][1108/1132]	Iter 15799  lr 1.8185661446562e-05  Loss 15.4597 (14.7713)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:13:52 - INFO - Test: [0/40]		Batch-Time 1.423 (1.422)	
+2026-06-17 02:14:00 - INFO - calculate similarity time: 0.073
+2026-06-17 02:14:00 - INFO - Image to text (R@1, R@5, R@10): 82.2, 96.8, 98.7
+2026-06-17 02:14:00 - INFO - Text to image (R@1, R@5, R@10): 69.1, 91.6, 95.5
+2026-06-17 02:14:00 - INFO - Current rsum is 534.0
+2026-06-17 02:14:00 - INFO - Epoch: [6], Best rsum: 534.0 
+
+2026-06-17 02:14:02 - INFO - Epoch 7: LR adjusted to 1.76e-05 (base: 2.00e-04)
+2026-06-17 02:14:31 - INFO - Epoch: [7][76/1132]	Iter 15999  lr 1.7559875842035246e-05  Loss 16.0148 (13.1671)	Batch-Time 0.36 (0.38)	Data 0.009 (0.024)	
+2026-06-17 02:15:07 - INFO - Epoch: [7][176/1132]	Iter 16199  lr 1.7559875842035246e-05  Loss 13.6744 (13.1400)	Batch-Time 0.37 (0.37)	Data 0.009 (0.015)	
+2026-06-17 02:15:44 - INFO - Epoch: [7][276/1132]	Iter 16399  lr 1.7559875842035246e-05  Loss 16.9822 (13.3630)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:16:20 - INFO - Epoch: [7][376/1132]	Iter 16599  lr 1.7559875842035246e-05  Loss 12.6629 (13.3166)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:16:57 - INFO - Epoch: [7][476/1132]	Iter 16799  lr 1.7559875842035246e-05  Loss 10.2092 (13.2476)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:17:33 - INFO - Epoch: [7][576/1132]	Iter 16999  lr 1.7559875842035246e-05  Loss 13.3340 (13.2249)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:18:09 - INFO - Epoch: [7][676/1132]	Iter 17199  lr 1.7559875842035246e-05  Loss 9.3030 (13.2462)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:18:46 - INFO - Epoch: [7][776/1132]	Iter 17399  lr 1.7559875842035246e-05  Loss 17.5761 (13.2750)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:19:22 - INFO - Epoch: [7][876/1132]	Iter 17599  lr 1.7559875842035246e-05  Loss 14.1075 (13.2118)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:19:58 - INFO - Epoch: [7][976/1132]	Iter 17799  lr 1.7559875842035246e-05  Loss 11.1826 (13.2632)	Batch-Time 0.36 (0.37)	Data 0.010 (0.010)	
+2026-06-17 02:20:35 - INFO - Epoch: [7][1076/1132]	Iter 17999  lr 1.7559875842035246e-05  Loss 13.7592 (13.2666)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:20:57 - INFO - Test: [0/40]		Batch-Time 1.267 (1.267)	
+2026-06-17 02:21:05 - INFO - calculate similarity time: 0.062
+2026-06-17 02:21:06 - INFO - Image to text (R@1, R@5, R@10): 83.8, 98.1, 99.1
+2026-06-17 02:21:06 - INFO - Text to image (R@1, R@5, R@10): 69.7, 91.9, 95.6
+2026-06-17 02:21:06 - INFO - Current rsum is 538.3
+2026-06-17 02:21:06 - INFO - Epoch: [7], Best rsum: 538.3 
+
+2026-06-17 02:21:07 - INFO - Epoch 8: LR adjusted to 1.69e-05 (base: 2.00e-04)
+2026-06-17 02:21:24 - INFO - Epoch: [8][44/1132]	Iter 18199  lr 1.6856740760409155e-05  Loss 16.8022 (13.0710)	Batch-Time 0.37 (0.39)	Data 0.009 (0.030)	
+2026-06-17 02:22:01 - INFO - Epoch: [8][144/1132]	Iter 18399  lr 1.6856740760409155e-05  Loss 10.5306 (12.5355)	Batch-Time 0.37 (0.37)	Data 0.009 (0.015)	
+2026-06-17 02:22:38 - INFO - Epoch: [8][244/1132]	Iter 18599  lr 1.6856740760409155e-05  Loss 11.8459 (12.4172)	Batch-Time 0.37 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:23:14 - INFO - Epoch: [8][344/1132]	Iter 18799  lr 1.6856740760409155e-05  Loss 15.3931 (12.2681)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:23:51 - INFO - Epoch: [8][444/1132]	Iter 18999  lr 1.6856740760409155e-05  Loss 15.0460 (12.3212)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:24:28 - INFO - Epoch: [8][544/1132]	Iter 19199  lr 1.6856740760409155e-05  Loss 11.3911 (12.3904)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:25:05 - INFO - Epoch: [8][644/1132]	Iter 19399  lr 1.6856740760409155e-05  Loss 12.3623 (12.4312)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:25:42 - INFO - Epoch: [8][744/1132]	Iter 19599  lr 1.6856740760409155e-05  Loss 9.5074 (12.4576)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:26:18 - INFO - Epoch: [8][844/1132]	Iter 19799  lr 1.6856740760409155e-05  Loss 9.6934 (12.5433)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:26:55 - INFO - Epoch: [8][944/1132]	Iter 19999  lr 1.6856740760409155e-05  Loss 18.9840 (12.5864)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:27:31 - INFO - Epoch: [8][1044/1132]	Iter 20199  lr 1.6856740760409155e-05  Loss 9.7562 (12.5997)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:28:04 - INFO - Test: [0/40]		Batch-Time 1.201 (1.201)	
+2026-06-17 02:28:13 - INFO - calculate similarity time: 0.061
+2026-06-17 02:28:13 - INFO - Image to text (R@1, R@5, R@10): 82.9, 97.7, 99.4
+2026-06-17 02:28:13 - INFO - Text to image (R@1, R@5, R@10): 70.2, 91.7, 95.7
+2026-06-17 02:28:13 - INFO - Current rsum is 537.7
+2026-06-17 02:28:13 - INFO - Epoch: [8], Best rsum: 538.3 
+
+2026-06-17 02:28:13 - INFO - Epoch 9: LR adjusted to 1.61e-05 (base: 2.00e-04)
+2026-06-17 02:28:18 - INFO - Epoch: [9][12/1132]	Iter 20399  lr 1.6083959896778496e-05  Loss 8.6443 (10.5395)	Batch-Time 0.36 (0.45)	Data 0.009 (0.093)	
+2026-06-17 02:28:54 - INFO - Epoch: [9][112/1132]	Iter 20599  lr 1.6083959896778496e-05  Loss 6.9777 (11.0507)	Batch-Time 0.36 (0.37)	Data 0.009 (0.018)	
+2026-06-17 02:29:31 - INFO - Epoch: [9][212/1132]	Iter 20799  lr 1.6083959896778496e-05  Loss 12.9175 (10.8259)	Batch-Time 0.36 (0.37)	Data 0.009 (0.014)	
+2026-06-17 02:30:07 - INFO - Epoch: [9][312/1132]	Iter 20999  lr 1.6083959896778496e-05  Loss 6.2941 (10.8763)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:30:44 - INFO - Epoch: [9][412/1132]	Iter 21199  lr 1.6083959896778496e-05  Loss 10.1757 (10.9154)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:31:21 - INFO - Epoch: [9][512/1132]	Iter 21399  lr 1.6083959896778496e-05  Loss 10.7998 (10.9785)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:31:57 - INFO - Epoch: [9][612/1132]	Iter 21599  lr 1.6083959896778496e-05  Loss 11.2515 (10.9817)	Batch-Time 0.36 (0.37)	Data 0.008 (0.011)	
+2026-06-17 02:32:34 - INFO - Epoch: [9][712/1132]	Iter 21799  lr 1.6083959896778496e-05  Loss 14.5918 (11.0268)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:33:10 - INFO - Epoch: [9][812/1132]	Iter 21999  lr 1.6083959896778496e-05  Loss 12.8610 (11.0137)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:33:47 - INFO - Epoch: [9][912/1132]	Iter 22199  lr 1.6083959896778496e-05  Loss 6.3720 (11.0594)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:34:23 - INFO - Epoch: [9][1012/1132]	Iter 22399  lr 1.6083959896778496e-05  Loss 13.2140 (11.0821)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:35:00 - INFO - Epoch: [9][1112/1132]	Iter 22599  lr 1.6083959896778496e-05  Loss 7.3544 (11.1076)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:35:08 - INFO - Test: [0/40]		Batch-Time 1.421 (1.421)	
+2026-06-17 02:35:17 - INFO - calculate similarity time: 0.063
+2026-06-17 02:35:17 - INFO - Image to text (R@1, R@5, R@10): 83.9, 97.7, 99.4
+2026-06-17 02:35:17 - INFO - Text to image (R@1, R@5, R@10): 69.8, 91.8, 95.7
+2026-06-17 02:35:17 - INFO - Current rsum is 538.3
+2026-06-17 02:35:17 - INFO - Epoch: [9], Best rsum: 538.3 
+
+2026-06-17 02:35:20 - INFO - Epoch 10: LR adjusted to 1.53e-05 (base: 2.00e-04)
+2026-06-17 02:35:51 - INFO - Epoch: [10][80/1132]	Iter 22799  lr 1.5250000000000001e-05  Loss 12.2796 (10.2422)	Batch-Time 0.36 (0.39)	Data 0.009 (0.023)	
+2026-06-17 02:36:27 - INFO - Epoch: [10][180/1132]	Iter 22999  lr 1.5250000000000001e-05  Loss 11.1825 (10.5373)	Batch-Time 0.36 (0.37)	Data 0.009 (0.015)	
+2026-06-17 02:37:03 - INFO - Epoch: [10][280/1132]	Iter 23199  lr 1.5250000000000001e-05  Loss 9.0478 (10.4662)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:37:39 - INFO - Epoch: [10][380/1132]	Iter 23399  lr 1.5250000000000001e-05  Loss 17.2088 (10.5596)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:38:16 - INFO - Epoch: [10][480/1132]	Iter 23599  lr 1.5250000000000001e-05  Loss 7.6445 (10.6641)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:38:52 - INFO - Epoch: [10][580/1132]	Iter 23799  lr 1.5250000000000001e-05  Loss 9.6935 (10.7719)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:39:29 - INFO - Epoch: [10][680/1132]	Iter 23999  lr 1.5250000000000001e-05  Loss 10.6762 (10.7725)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:40:05 - INFO - Epoch: [10][780/1132]	Iter 24199  lr 1.5250000000000001e-05  Loss 9.3904 (10.8173)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:40:42 - INFO - Epoch: [10][880/1132]	Iter 24399  lr 1.5250000000000001e-05  Loss 6.7212 (10.7846)	Batch-Time 0.36 (0.37)	Data 0.008 (0.010)	
+2026-06-17 02:41:19 - INFO - Epoch: [10][980/1132]	Iter 24599  lr 1.5250000000000001e-05  Loss 10.6558 (10.7948)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:41:55 - INFO - Epoch: [10][1080/1132]	Iter 24799  lr 1.5250000000000001e-05  Loss 8.3943 (10.7696)	Batch-Time 0.38 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:42:15 - INFO - Test: [0/40]		Batch-Time 1.232 (1.232)	
+2026-06-17 02:42:24 - INFO - calculate similarity time: 0.067
+2026-06-17 02:42:24 - INFO - Image to text (R@1, R@5, R@10): 83.0, 97.2, 99.1
+2026-06-17 02:42:24 - INFO - Text to image (R@1, R@5, R@10): 70.5, 91.9, 95.8
+2026-06-17 02:42:24 - INFO - Current rsum is 537.5
+2026-06-17 02:42:24 - INFO - Epoch: [10], Best rsum: 538.3 
+
+2026-06-17 02:42:24 - INFO - Epoch 11: LR adjusted to 1.44e-05 (base: 2.00e-04)
+2026-06-17 02:42:42 - INFO - Epoch: [11][48/1132]	Iter 24999  lr 1.4363998109220106e-05  Loss 8.2929 (10.0314)	Batch-Time 0.36 (0.39)	Data 0.009 (0.032)	
+2026-06-17 02:43:19 - INFO - Epoch: [11][148/1132]	Iter 25199  lr 1.4363998109220106e-05  Loss 15.0903 (9.7806)	Batch-Time 0.37 (0.37)	Data 0.009 (0.017)	
+2026-06-17 02:43:55 - INFO - Epoch: [11][248/1132]	Iter 25399  lr 1.4363998109220106e-05  Loss 16.4397 (9.8384)	Batch-Time 0.37 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:44:32 - INFO - Epoch: [11][348/1132]	Iter 25599  lr 1.4363998109220106e-05  Loss 9.2311 (9.8520)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:45:08 - INFO - Epoch: [11][448/1132]	Iter 25799  lr 1.4363998109220106e-05  Loss 11.3868 (9.9060)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:45:45 - INFO - Epoch: [11][548/1132]	Iter 25999  lr 1.4363998109220106e-05  Loss 14.6082 (9.8662)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:46:21 - INFO - Epoch: [11][648/1132]	Iter 26199  lr 1.4363998109220106e-05  Loss 10.4429 (9.8796)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:46:58 - INFO - Epoch: [11][748/1132]	Iter 26399  lr 1.4363998109220106e-05  Loss 11.6041 (9.9118)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:47:34 - INFO - Epoch: [11][848/1132]	Iter 26599  lr 1.4363998109220106e-05  Loss 12.3485 (9.8837)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:48:11 - INFO - Epoch: [11][948/1132]	Iter 26799  lr 1.4363998109220106e-05  Loss 11.2112 (9.8634)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:48:48 - INFO - Epoch: [11][1048/1132]	Iter 26999  lr 1.4363998109220106e-05  Loss 10.1030 (9.8607)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:49:20 - INFO - Test: [0/40]		Batch-Time 1.256 (1.256)	
+2026-06-17 02:49:28 - INFO - calculate similarity time: 0.064
+2026-06-17 02:49:28 - INFO - Image to text (R@1, R@5, R@10): 82.7, 97.6, 99.5
+2026-06-17 02:49:28 - INFO - Text to image (R@1, R@5, R@10): 70.3, 92.2, 95.8
+2026-06-17 02:49:28 - INFO - Current rsum is 538.1
+2026-06-17 02:49:28 - INFO - Epoch: [11], Best rsum: 538.3 
+
+2026-06-17 02:49:28 - INFO - Epoch 12: LR adjusted to 1.34e-05 (base: 2.00e-04)
+2026-06-17 02:49:35 - INFO - Epoch: [12][16/1132]	Iter 27199  lr 1.3435661446562001e-05  Loss 14.5440 (10.3045)	Batch-Time 0.36 (0.43)	Data 0.009 (0.075)	
+2026-06-17 02:50:12 - INFO - Epoch: [12][116/1132]	Iter 27399  lr 1.3435661446562001e-05  Loss 10.9808 (9.5768)	Batch-Time 0.37 (0.37)	Data 0.009 (0.018)	
+2026-06-17 02:50:48 - INFO - Epoch: [12][216/1132]	Iter 27599  lr 1.3435661446562001e-05  Loss 7.4572 (9.2598)	Batch-Time 0.37 (0.37)	Data 0.009 (0.014)	
+2026-06-17 02:51:25 - INFO - Epoch: [12][316/1132]	Iter 27799  lr 1.3435661446562001e-05  Loss 7.8703 (9.3176)	Batch-Time 0.39 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:52:02 - INFO - Epoch: [12][416/1132]	Iter 27999  lr 1.3435661446562001e-05  Loss 9.4840 (9.3497)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:52:39 - INFO - Epoch: [12][516/1132]	Iter 28199  lr 1.3435661446562001e-05  Loss 5.3473 (9.3396)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 02:53:15 - INFO - Epoch: [12][616/1132]	Iter 28399  lr 1.3435661446562001e-05  Loss 6.5640 (9.3181)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:53:52 - INFO - Epoch: [12][716/1132]	Iter 28599  lr 1.3435661446562001e-05  Loss 7.3875 (9.3187)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:54:28 - INFO - Epoch: [12][816/1132]	Iter 28799  lr 1.3435661446562001e-05  Loss 8.6951 (9.2905)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:55:05 - INFO - Epoch: [12][916/1132]	Iter 28999  lr 1.3435661446562001e-05  Loss 11.6251 (9.2979)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:55:41 - INFO - Epoch: [12][1016/1132]	Iter 29199  lr 1.3435661446562001e-05  Loss 9.4307 (9.2890)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:56:18 - INFO - Epoch: [12][1116/1132]	Iter 29399  lr 1.3435661446562001e-05  Loss 9.9939 (9.3253)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 02:56:25 - INFO - Test: [0/40]		Batch-Time 1.243 (1.243)	
+2026-06-17 02:56:33 - INFO - calculate similarity time: 0.063
+2026-06-17 02:56:33 - INFO - Image to text (R@1, R@5, R@10): 83.8, 97.5, 99.3
+2026-06-17 02:56:33 - INFO - Text to image (R@1, R@5, R@10): 70.9, 92.2, 95.8
+2026-06-17 02:56:33 - INFO - Current rsum is 539.5
+2026-06-17 02:56:33 - INFO - Epoch: [12], Best rsum: 539.5 
+
+2026-06-17 02:56:35 - INFO - Epoch 13: LR adjusted to 1.25e-05 (base: 2.00e-04)
+2026-06-17 02:57:07 - INFO - Epoch: [13][84/1132]	Iter 29599  lr 1.2475161062768713e-05  Loss 6.9520 (8.7313)	Batch-Time 0.36 (0.38)	Data 0.009 (0.023)	
+2026-06-17 02:57:43 - INFO - Epoch: [13][184/1132]	Iter 29799  lr 1.2475161062768713e-05  Loss 4.9122 (8.7354)	Batch-Time 0.36 (0.37)	Data 0.009 (0.015)	
+2026-06-17 02:58:19 - INFO - Epoch: [13][284/1132]	Iter 29999  lr 1.2475161062768713e-05  Loss 10.3710 (8.8415)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 02:58:56 - INFO - Epoch: [13][384/1132]	Iter 30199  lr 1.2475161062768713e-05  Loss 4.6676 (8.7423)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 02:59:32 - INFO - Epoch: [13][484/1132]	Iter 30399  lr 1.2475161062768713e-05  Loss 11.7897 (8.7194)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:00:09 - INFO - Epoch: [13][584/1132]	Iter 30599  lr 1.2475161062768713e-05  Loss 8.5824 (8.6717)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:00:45 - INFO - Epoch: [13][684/1132]	Iter 30799  lr 1.2475161062768713e-05  Loss 10.7887 (8.6804)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:01:22 - INFO - Epoch: [13][784/1132]	Iter 30999  lr 1.2475161062768713e-05  Loss 8.4967 (8.6885)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:01:58 - INFO - Epoch: [13][884/1132]	Iter 31199  lr 1.2475161062768713e-05  Loss 8.7825 (8.7426)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:02:34 - INFO - Epoch: [13][984/1132]	Iter 31399  lr 1.2475161062768713e-05  Loss 10.7751 (8.7877)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:03:11 - INFO - Epoch: [13][1084/1132]	Iter 31599  lr 1.2475161062768713e-05  Loss 8.3409 (8.8417)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:03:30 - INFO - Test: [0/40]		Batch-Time 1.202 (1.202)	
+2026-06-17 03:03:38 - INFO - calculate similarity time: 0.081
+2026-06-17 03:03:38 - INFO - Image to text (R@1, R@5, R@10): 84.5, 97.4, 98.8
+2026-06-17 03:03:38 - INFO - Text to image (R@1, R@5, R@10): 70.8, 92.3, 95.7
+2026-06-17 03:03:38 - INFO - Current rsum is 539.4
+2026-06-17 03:03:38 - INFO - Epoch: [13], Best rsum: 539.5 
+
+2026-06-17 03:03:38 - INFO - Epoch 14: LR adjusted to 1.15e-05 (base: 2.00e-04)
+2026-06-17 03:03:58 - INFO - Epoch: [14][52/1132]	Iter 31799  lr 1.149302040104271e-05  Loss 9.4378 (8.3019)	Batch-Time 0.37 (0.38)	Data 0.009 (0.028)	
+2026-06-17 03:04:35 - INFO - Epoch: [14][152/1132]	Iter 31999  lr 1.149302040104271e-05  Loss 8.3341 (8.3121)	Batch-Time 0.36 (0.37)	Data 0.009 (0.015)	
+2026-06-17 03:05:11 - INFO - Epoch: [14][252/1132]	Iter 32199  lr 1.149302040104271e-05  Loss 10.1927 (8.2862)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 03:05:48 - INFO - Epoch: [14][352/1132]	Iter 32399  lr 1.149302040104271e-05  Loss 5.1315 (8.1855)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:06:24 - INFO - Epoch: [14][452/1132]	Iter 32599  lr 1.149302040104271e-05  Loss 7.0483 (8.1531)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:07:01 - INFO - Epoch: [14][552/1132]	Iter 32799  lr 1.149302040104271e-05  Loss 9.3327 (8.1609)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:07:37 - INFO - Epoch: [14][652/1132]	Iter 32999  lr 1.149302040104271e-05  Loss 10.2228 (8.2414)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:08:13 - INFO - Epoch: [14][752/1132]	Iter 33199  lr 1.149302040104271e-05  Loss 6.9392 (8.2107)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:08:50 - INFO - Epoch: [14][852/1132]	Iter 33399  lr 1.149302040104271e-05  Loss 6.2952 (8.2449)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:09:26 - INFO - Epoch: [14][952/1132]	Iter 33599  lr 1.149302040104271e-05  Loss 10.3761 (8.2404)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:10:02 - INFO - Epoch: [14][1052/1132]	Iter 33799  lr 1.149302040104271e-05  Loss 11.0141 (8.2244)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:10:33 - INFO - Test: [0/40]		Batch-Time 1.187 (1.187)	
+2026-06-17 03:10:41 - INFO - calculate similarity time: 0.066
+2026-06-17 03:10:41 - INFO - Image to text (R@1, R@5, R@10): 84.2, 97.8, 99.1
+2026-06-17 03:10:42 - INFO - Text to image (R@1, R@5, R@10): 70.5, 92.5, 95.9
+2026-06-17 03:10:42 - INFO - Current rsum is 540.0
+2026-06-17 03:10:42 - INFO - Epoch: [14], Best rsum: 540.0 
+
+2026-06-17 03:10:43 - INFO - Epoch 15: LR adjusted to 1.05e-05 (base: 2.00e-04)
+2026-06-17 03:10:51 - INFO - Epoch: [15][20/1132]	Iter 33999  lr 1.0500000000000001e-05  Loss 6.5548 (8.3755)	Batch-Time 0.36 (0.41)	Data 0.009 (0.056)	
+2026-06-17 03:11:28 - INFO - Epoch: [15][120/1132]	Iter 34199  lr 1.0500000000000001e-05  Loss 12.1195 (8.0699)	Batch-Time 0.36 (0.37)	Data 0.009 (0.017)	
+2026-06-17 03:12:04 - INFO - Epoch: [15][220/1132]	Iter 34399  lr 1.0500000000000001e-05  Loss 12.2459 (8.0252)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 03:12:41 - INFO - Epoch: [15][320/1132]	Iter 34599  lr 1.0500000000000001e-05  Loss 6.5365 (8.0206)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:13:17 - INFO - Epoch: [15][420/1132]	Iter 34799  lr 1.0500000000000001e-05  Loss 12.6747 (8.0631)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:13:53 - INFO - Epoch: [15][520/1132]	Iter 34999  lr 1.0500000000000001e-05  Loss 4.7767 (7.9616)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:14:30 - INFO - Epoch: [15][620/1132]	Iter 35199  lr 1.0500000000000001e-05  Loss 5.5219 (8.0006)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:15:07 - INFO - Epoch: [15][720/1132]	Iter 35399  lr 1.0500000000000001e-05  Loss 4.7013 (8.0846)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:15:43 - INFO - Epoch: [15][820/1132]	Iter 35599  lr 1.0500000000000001e-05  Loss 12.1178 (8.2157)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:16:20 - INFO - Epoch: [15][920/1132]	Iter 35799  lr 1.0500000000000001e-05  Loss 6.2810 (8.2317)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:16:56 - INFO - Epoch: [15][1020/1132]	Iter 35999  lr 1.0500000000000001e-05  Loss 7.2797 (8.2794)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:17:32 - INFO - Epoch: [15][1120/1132]	Iter 36199  lr 1.0500000000000001e-05  Loss 7.0841 (8.3620)	Batch-Time 0.36 (0.37)	Data 0.008 (0.010)	
+2026-06-17 03:17:38 - INFO - Test: [0/40]		Batch-Time 1.418 (1.418)	
+2026-06-17 03:17:47 - INFO - calculate similarity time: 0.077
+2026-06-17 03:17:47 - INFO - Image to text (R@1, R@5, R@10): 83.5, 97.4, 99.1
+2026-06-17 03:17:47 - INFO - Text to image (R@1, R@5, R@10): 70.4, 92.0, 95.7
+2026-06-17 03:17:47 - INFO - Current rsum is 538.0
+2026-06-17 03:17:47 - INFO - Epoch: [15], Best rsum: 540.0 
+
+2026-06-17 03:17:47 - INFO - Epoch 16: LR adjusted to 9.51e-06 (base: 2.00e-04)
+2026-06-17 03:18:21 - INFO - Epoch: [16][88/1132]	Iter 36399  lr 9.506979598957295e-06  Loss 11.0457 (7.9936)	Batch-Time 0.36 (0.38)	Data 0.009 (0.020)	
+2026-06-17 03:18:58 - INFO - Epoch: [16][188/1132]	Iter 36599  lr 9.506979598957295e-06  Loss 4.7055 (8.1528)	Batch-Time 0.37 (0.37)	Data 0.009 (0.014)	
+2026-06-17 03:19:35 - INFO - Epoch: [16][288/1132]	Iter 36799  lr 9.506979598957295e-06  Loss 7.6410 (8.1091)	Batch-Time 0.44 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:20:11 - INFO - Epoch: [16][388/1132]	Iter 36999  lr 9.506979598957295e-06  Loss 9.8641 (8.2195)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:20:47 - INFO - Epoch: [16][488/1132]	Iter 37199  lr 9.506979598957295e-06  Loss 6.2982 (8.2168)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:21:24 - INFO - Epoch: [16][588/1132]	Iter 37399  lr 9.506979598957295e-06  Loss 5.3761 (8.2097)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:22:00 - INFO - Epoch: [16][688/1132]	Iter 37599  lr 9.506979598957295e-06  Loss 8.2573 (8.2402)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:22:37 - INFO - Epoch: [16][788/1132]	Iter 37799  lr 9.506979598957295e-06  Loss 4.6867 (8.2794)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:23:13 - INFO - Epoch: [16][888/1132]	Iter 37999  lr 9.506979598957295e-06  Loss 8.9704 (8.3098)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:23:50 - INFO - Epoch: [16][988/1132]	Iter 38199  lr 9.506979598957295e-06  Loss 9.8072 (8.3211)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:24:26 - INFO - Epoch: [16][1088/1132]	Iter 38399  lr 9.506979598957295e-06  Loss 4.8893 (8.3200)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:24:44 - INFO - Test: [0/40]		Batch-Time 1.336 (1.336)	
+2026-06-17 03:24:52 - INFO - calculate similarity time: 0.070
+2026-06-17 03:24:52 - INFO - Image to text (R@1, R@5, R@10): 83.3, 97.1, 98.7
+2026-06-17 03:24:52 - INFO - Text to image (R@1, R@5, R@10): 70.6, 92.0, 95.4
+2026-06-17 03:24:52 - INFO - Current rsum is 537.1
+2026-06-17 03:24:52 - INFO - Epoch: [16], Best rsum: 540.0 
+
+2026-06-17 03:24:52 - INFO - Epoch 17: LR adjusted to 8.52e-06 (base: 2.00e-04)
+2026-06-17 03:25:14 - INFO - Epoch: [17][56/1132]	Iter 38599  lr 8.524838937231288e-06  Loss 10.7397 (7.7210)	Batch-Time 0.37 (0.39)	Data 0.008 (0.028)	
+2026-06-17 03:25:50 - INFO - Epoch: [17][156/1132]	Iter 38799  lr 8.524838937231288e-06  Loss 2.2843 (7.6874)	Batch-Time 0.36 (0.37)	Data 0.009 (0.016)	
+2026-06-17 03:26:26 - INFO - Epoch: [17][256/1132]	Iter 38999  lr 8.524838937231288e-06  Loss 6.7418 (7.6665)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 03:27:03 - INFO - Epoch: [17][356/1132]	Iter 39199  lr 8.524838937231288e-06  Loss 9.9540 (7.5737)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:27:39 - INFO - Epoch: [17][456/1132]	Iter 39399  lr 8.524838937231288e-06  Loss 6.2531 (7.5092)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:28:16 - INFO - Epoch: [17][556/1132]	Iter 39599  lr 8.524838937231288e-06  Loss 11.3991 (7.4879)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:28:52 - INFO - Epoch: [17][656/1132]	Iter 39799  lr 8.524838937231288e-06  Loss 12.2517 (7.4706)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:29:29 - INFO - Epoch: [17][756/1132]	Iter 39999  lr 8.524838937231288e-06  Loss 12.0040 (7.4893)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:30:05 - INFO - Epoch: [17][856/1132]	Iter 40199  lr 8.524838937231288e-06  Loss 7.3114 (7.4670)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:30:42 - INFO - Epoch: [17][956/1132]	Iter 40399  lr 8.524838937231288e-06  Loss 10.3830 (7.4882)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:31:18 - INFO - Epoch: [17][1056/1132]	Iter 40599  lr 8.524838937231288e-06  Loss 6.0833 (7.5358)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:31:47 - INFO - Test: [0/40]		Batch-Time 1.246 (1.246)	
+2026-06-17 03:31:55 - INFO - calculate similarity time: 0.072
+2026-06-17 03:31:55 - INFO - Image to text (R@1, R@5, R@10): 83.5, 97.3, 99.3
+2026-06-17 03:31:55 - INFO - Text to image (R@1, R@5, R@10): 70.3, 92.1, 95.5
+2026-06-17 03:31:55 - INFO - Current rsum is 537.9
+2026-06-17 03:31:55 - INFO - Epoch: [17], Best rsum: 540.0 
+
+2026-06-17 03:31:55 - INFO - Epoch 18: LR adjusted to 7.56e-06 (base: 2.00e-04)
+2026-06-17 03:32:05 - INFO - Epoch: [18][24/1132]	Iter 40799  lr 7.564338553438e-06  Loss 10.4807 (7.3290)	Batch-Time 0.37 (0.40)	Data 0.009 (0.049)	
+2026-06-17 03:32:42 - INFO - Epoch: [18][124/1132]	Iter 40999  lr 7.564338553438e-06  Loss 4.6955 (7.3203)	Batch-Time 0.36 (0.37)	Data 0.009 (0.017)	
+2026-06-17 03:33:18 - INFO - Epoch: [18][224/1132]	Iter 41199  lr 7.564338553438e-06  Loss 8.1194 (7.2681)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 03:33:54 - INFO - Epoch: [18][324/1132]	Iter 41399  lr 7.564338553438e-06  Loss 5.7151 (7.3708)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:34:31 - INFO - Epoch: [18][424/1132]	Iter 41599  lr 7.564338553438e-06  Loss 6.4560 (7.4016)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:35:07 - INFO - Epoch: [18][524/1132]	Iter 41799  lr 7.564338553438e-06  Loss 8.8286 (7.3897)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:35:44 - INFO - Epoch: [18][624/1132]	Iter 41999  lr 7.564338553438e-06  Loss 6.3917 (7.4260)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:36:20 - INFO - Epoch: [18][724/1132]	Iter 42199  lr 7.564338553438e-06  Loss 4.4564 (7.4285)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:36:57 - INFO - Epoch: [18][824/1132]	Iter 42399  lr 7.564338553438e-06  Loss 6.6774 (7.4369)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:37:33 - INFO - Epoch: [18][924/1132]	Iter 42599  lr 7.564338553438e-06  Loss 6.0460 (7.4239)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:38:09 - INFO - Epoch: [18][1024/1132]	Iter 42799  lr 7.564338553438e-06  Loss 10.2393 (7.4130)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:38:46 - INFO - Epoch: [18][1124/1132]	Iter 42999  lr 7.564338553438e-06  Loss 8.3515 (7.4054)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:38:50 - INFO - Test: [0/40]		Batch-Time 1.348 (1.348)	
+2026-06-17 03:38:59 - INFO - calculate similarity time: 0.064
+2026-06-17 03:38:59 - INFO - Image to text (R@1, R@5, R@10): 85.2, 97.9, 99.2
+2026-06-17 03:38:59 - INFO - Text to image (R@1, R@5, R@10): 70.9, 92.1, 96.0
+2026-06-17 03:38:59 - INFO - Current rsum is 541.3
+2026-06-17 03:38:59 - INFO - Epoch: [18], Best rsum: 541.3 
+
+2026-06-17 03:39:01 - INFO - Epoch 19: LR adjusted to 6.64e-06 (base: 2.00e-04)
+2026-06-17 03:39:35 - INFO - Epoch: [19][92/1132]	Iter 43199  lr 6.6360018907799e-06  Loss 6.3022 (6.7534)	Batch-Time 0.36 (0.37)	Data 0.009 (0.019)	
+2026-06-17 03:40:12 - INFO - Epoch: [19][192/1132]	Iter 43399  lr 6.6360018907799e-06  Loss 10.6388 (6.9243)	Batch-Time 0.37 (0.37)	Data 0.009 (0.014)	
+2026-06-17 03:40:48 - INFO - Epoch: [19][292/1132]	Iter 43599  lr 6.6360018907799e-06  Loss 7.6889 (6.8690)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:41:25 - INFO - Epoch: [19][392/1132]	Iter 43799  lr 6.6360018907799e-06  Loss 9.9549 (6.8296)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:42:01 - INFO - Epoch: [19][492/1132]	Iter 43999  lr 6.6360018907799e-06  Loss 5.6784 (6.8200)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:42:38 - INFO - Epoch: [19][592/1132]	Iter 44199  lr 6.6360018907799e-06  Loss 6.3840 (6.8295)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:43:15 - INFO - Epoch: [19][692/1132]	Iter 44399  lr 6.6360018907799e-06  Loss 3.8076 (6.8325)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:43:51 - INFO - Epoch: [19][792/1132]	Iter 44599  lr 6.6360018907799e-06  Loss 6.4029 (6.8713)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:44:28 - INFO - Epoch: [19][892/1132]	Iter 44799  lr 6.6360018907799e-06  Loss 4.8581 (6.9027)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:45:05 - INFO - Epoch: [19][992/1132]	Iter 44999  lr 6.6360018907799e-06  Loss 6.5143 (6.9297)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:45:41 - INFO - Epoch: [19][1092/1132]	Iter 45199  lr 6.6360018907799e-06  Loss 6.4832 (6.9009)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:45:58 - INFO - Test: [0/40]		Batch-Time 1.524 (1.524)	
+2026-06-17 03:46:06 - INFO - calculate similarity time: 0.072
+2026-06-17 03:46:06 - INFO - Image to text (R@1, R@5, R@10): 85.7, 97.3, 99.0
+2026-06-17 03:46:06 - INFO - Text to image (R@1, R@5, R@10): 71.7, 91.9, 95.8
+2026-06-17 03:46:06 - INFO - Current rsum is 541.4
+2026-06-17 03:46:06 - INFO - Epoch: [19], Best rsum: 541.4 
+
+2026-06-17 03:46:08 - INFO - Epoch 20: LR adjusted to 5.75e-06 (base: 2.00e-04)
+2026-06-17 03:46:32 - INFO - Epoch: [20][60/1132]	Iter 45399  lr 5.750000000000002e-06  Loss 6.3472 (6.8201)	Batch-Time 0.37 (0.39)	Data 0.009 (0.030)	
+2026-06-17 03:47:08 - INFO - Epoch: [20][160/1132]	Iter 45599  lr 5.750000000000002e-06  Loss 4.8372 (6.7277)	Batch-Time 0.36 (0.37)	Data 0.009 (0.017)	
+2026-06-17 03:47:44 - INFO - Epoch: [20][260/1132]	Iter 45799  lr 5.750000000000002e-06  Loss 6.9114 (6.7521)	Batch-Time 0.36 (0.37)	Data 0.009 (0.014)	
+2026-06-17 03:48:20 - INFO - Epoch: [20][360/1132]	Iter 45999  lr 5.750000000000002e-06  Loss 8.1118 (6.7712)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:48:57 - INFO - Epoch: [20][460/1132]	Iter 46199  lr 5.750000000000002e-06  Loss 4.0153 (6.6502)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 03:49:33 - INFO - Epoch: [20][560/1132]	Iter 46399  lr 5.750000000000002e-06  Loss 11.7348 (6.6743)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:50:10 - INFO - Epoch: [20][660/1132]	Iter 46599  lr 5.750000000000002e-06  Loss 7.4893 (6.6751)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:50:46 - INFO - Epoch: [20][760/1132]	Iter 46799  lr 5.750000000000002e-06  Loss 10.1031 (6.6700)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:51:23 - INFO - Epoch: [20][860/1132]	Iter 46999  lr 5.750000000000002e-06  Loss 9.6201 (6.7112)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:51:59 - INFO - Epoch: [20][960/1132]	Iter 47199  lr 5.750000000000002e-06  Loss 5.3309 (6.7051)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:52:36 - INFO - Epoch: [20][1060/1132]	Iter 47399  lr 5.750000000000002e-06  Loss 4.4268 (6.6940)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:53:03 - INFO - Test: [0/40]		Batch-Time 1.194 (1.194)	
+2026-06-17 03:53:12 - INFO - calculate similarity time: 0.065
+2026-06-17 03:53:12 - INFO - Image to text (R@1, R@5, R@10): 85.3, 98.1, 99.3
+2026-06-17 03:53:12 - INFO - Text to image (R@1, R@5, R@10): 71.2, 92.0, 95.9
+2026-06-17 03:53:12 - INFO - Current rsum is 541.9
+2026-06-17 03:53:12 - INFO - Epoch: [20], Best rsum: 541.9 
+
+2026-06-17 03:53:13 - INFO - Epoch 21: LR adjusted to 4.92e-06 (base: 2.00e-04)
+2026-06-17 03:53:25 - INFO - Epoch: [21][28/1132]	Iter 47599  lr 4.916040103221506e-06  Loss 5.7592 (6.1913)	Batch-Time 0.36 (0.40)	Data 0.009 (0.045)	
+2026-06-17 03:54:01 - INFO - Epoch: [21][128/1132]	Iter 47799  lr 4.916040103221506e-06  Loss 10.9666 (6.2137)	Batch-Time 0.37 (0.37)	Data 0.009 (0.017)	
+2026-06-17 03:54:38 - INFO - Epoch: [21][228/1132]	Iter 47999  lr 4.916040103221506e-06  Loss 4.7735 (6.2818)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 03:55:14 - INFO - Epoch: [21][328/1132]	Iter 48199  lr 4.916040103221506e-06  Loss 7.0575 (6.2722)	Batch-Time 0.36 (0.37)	Data 0.008 (0.012)	
+2026-06-17 03:55:51 - INFO - Epoch: [21][428/1132]	Iter 48399  lr 4.916040103221506e-06  Loss 8.1988 (6.2488)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:56:27 - INFO - Epoch: [21][528/1132]	Iter 48599  lr 4.916040103221506e-06  Loss 9.9533 (6.3039)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:57:03 - INFO - Epoch: [21][628/1132]	Iter 48799  lr 4.916040103221506e-06  Loss 7.5810 (6.2907)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 03:57:40 - INFO - Epoch: [21][728/1132]	Iter 48999  lr 4.916040103221506e-06  Loss 4.9278 (6.3012)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:58:16 - INFO - Epoch: [21][828/1132]	Iter 49199  lr 4.916040103221506e-06  Loss 7.0607 (6.2778)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:58:52 - INFO - Epoch: [21][928/1132]	Iter 49399  lr 4.916040103221506e-06  Loss 9.5943 (6.2265)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 03:59:29 - INFO - Epoch: [21][1028/1132]	Iter 49599  lr 4.916040103221506e-06  Loss 8.6173 (6.2216)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:00:05 - INFO - Epoch: [21][1128/1132]	Iter 49799  lr 4.916040103221506e-06  Loss 7.3650 (6.1864)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:00:08 - INFO - Test: [0/40]		Batch-Time 1.267 (1.267)	
+2026-06-17 04:00:17 - INFO - calculate similarity time: 0.086
+2026-06-17 04:00:17 - INFO - Image to text (R@1, R@5, R@10): 85.0, 98.1, 99.4
+2026-06-17 04:00:17 - INFO - Text to image (R@1, R@5, R@10): 71.5, 92.7, 96.0
+2026-06-17 04:00:17 - INFO - Current rsum is 542.7
+2026-06-17 04:00:17 - INFO - Epoch: [21], Best rsum: 542.7 
+
+2026-06-17 04:00:18 - INFO - Epoch 22: LR adjusted to 4.14e-06 (base: 2.00e-04)
+2026-06-17 04:00:54 - INFO - Epoch: [22][96/1132]	Iter 49999  lr 4.14325923959085e-06  Loss 4.7864 (6.0266)	Batch-Time 0.36 (0.38)	Data 0.009 (0.020)	
+2026-06-17 04:01:31 - INFO - Epoch: [22][196/1132]	Iter 50199  lr 4.14325923959085e-06  Loss 4.3886 (6.0824)	Batch-Time 0.36 (0.37)	Data 0.009 (0.014)	
+2026-06-17 04:02:07 - INFO - Epoch: [22][296/1132]	Iter 50399  lr 4.14325923959085e-06  Loss 5.3392 (5.9831)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:02:43 - INFO - Epoch: [22][396/1132]	Iter 50599  lr 4.14325923959085e-06  Loss 4.6562 (5.9771)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:03:19 - INFO - Epoch: [22][496/1132]	Iter 50799  lr 4.14325923959085e-06  Loss 3.7935 (5.9879)	Batch-Time 0.38 (0.36)	Data 0.009 (0.011)	
+2026-06-17 04:03:55 - INFO - Epoch: [22][596/1132]	Iter 50999  lr 4.14325923959085e-06  Loss 7.5475 (5.9552)	Batch-Time 0.36 (0.36)	Data 0.009 (0.011)	
+2026-06-17 04:04:32 - INFO - Epoch: [22][696/1132]	Iter 51199  lr 4.14325923959085e-06  Loss 4.2088 (5.9987)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:05:08 - INFO - Epoch: [22][796/1132]	Iter 51399  lr 4.14325923959085e-06  Loss 3.5772 (6.0016)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:05:44 - INFO - Epoch: [22][896/1132]	Iter 51599  lr 4.14325923959085e-06  Loss 2.8526 (5.9818)	Batch-Time 0.37 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:06:20 - INFO - Epoch: [22][996/1132]	Iter 51799  lr 4.14325923959085e-06  Loss 4.9958 (5.9921)	Batch-Time 0.36 (0.36)	Data 0.008 (0.010)	
+2026-06-17 04:06:57 - INFO - Epoch: [22][1096/1132]	Iter 51999  lr 4.14325923959085e-06  Loss 8.2264 (6.0108)	Batch-Time 0.38 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:07:11 - INFO - Test: [0/40]		Batch-Time 1.170 (1.170)	
+2026-06-17 04:07:20 - INFO - calculate similarity time: 0.073
+2026-06-17 04:07:20 - INFO - Image to text (R@1, R@5, R@10): 85.4, 97.4, 99.3
+2026-06-17 04:07:20 - INFO - Text to image (R@1, R@5, R@10): 71.6, 92.6, 95.7
+2026-06-17 04:07:20 - INFO - Current rsum is 541.9
+2026-06-17 04:07:20 - INFO - Epoch: [22], Best rsum: 542.7 
+
+2026-06-17 04:07:20 - INFO - Epoch 23: LR adjusted to 3.44e-06 (base: 2.00e-04)
+2026-06-17 04:07:44 - INFO - Epoch: [23][64/1132]	Iter 52199  lr 3.4401241579647533e-06  Loss 7.6580 (5.6309)	Batch-Time 0.36 (0.38)	Data 0.008 (0.026)	
+2026-06-17 04:08:21 - INFO - Epoch: [23][164/1132]	Iter 52399  lr 3.4401241579647533e-06  Loss 6.7224 (5.7453)	Batch-Time 0.38 (0.37)	Data 0.009 (0.015)	
+2026-06-17 04:08:58 - INFO - Epoch: [23][264/1132]	Iter 52599  lr 3.4401241579647533e-06  Loss 5.9694 (5.7426)	Batch-Time 0.37 (0.37)	Data 0.009 (0.013)	
+2026-06-17 04:09:34 - INFO - Epoch: [23][364/1132]	Iter 52799  lr 3.4401241579647533e-06  Loss 5.9332 (5.7224)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:10:11 - INFO - Epoch: [23][464/1132]	Iter 52999  lr 3.4401241579647533e-06  Loss 5.2955 (5.7098)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:10:47 - INFO - Epoch: [23][564/1132]	Iter 53199  lr 3.4401241579647533e-06  Loss 6.7214 (5.6963)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:11:24 - INFO - Epoch: [23][664/1132]	Iter 53399  lr 3.4401241579647533e-06  Loss 5.4696 (5.7261)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:12:01 - INFO - Epoch: [23][764/1132]	Iter 53599  lr 3.4401241579647533e-06  Loss 5.8971 (5.7791)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:12:37 - INFO - Epoch: [23][864/1132]	Iter 53799  lr 3.4401241579647533e-06  Loss 6.6955 (5.7563)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:13:14 - INFO - Epoch: [23][964/1132]	Iter 53999  lr 3.4401241579647533e-06  Loss 5.1575 (5.7565)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:13:51 - INFO - Epoch: [23][1064/1132]	Iter 54199  lr 3.4401241579647533e-06  Loss 3.6701 (5.7540)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:14:17 - INFO - Test: [0/40]		Batch-Time 1.389 (1.389)	
+2026-06-17 04:14:25 - INFO - calculate similarity time: 0.061
+2026-06-17 04:14:25 - INFO - Image to text (R@1, R@5, R@10): 85.2, 97.6, 99.2
+2026-06-17 04:14:25 - INFO - Text to image (R@1, R@5, R@10): 71.7, 92.3, 95.8
+2026-06-17 04:14:25 - INFO - Current rsum is 541.7
+2026-06-17 04:14:25 - INFO - Epoch: [23], Best rsum: 542.7 
+
+2026-06-17 04:14:25 - INFO - Epoch 24: LR adjusted to 2.81e-06 (base: 2.00e-04)
+2026-06-17 04:14:38 - INFO - Epoch: [24][32/1132]	Iter 54399  lr 2.8143385534380006e-06  Loss 3.7749 (5.3039)	Batch-Time 0.36 (0.39)	Data 0.009 (0.039)	
+2026-06-17 04:15:15 - INFO - Epoch: [24][132/1132]	Iter 54599  lr 2.8143385534380006e-06  Loss 6.8867 (5.6139)	Batch-Time 0.36 (0.37)	Data 0.009 (0.016)	
+2026-06-17 04:15:51 - INFO - Epoch: [24][232/1132]	Iter 54799  lr 2.8143385534380006e-06  Loss 3.6980 (5.7024)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 04:16:28 - INFO - Epoch: [24][332/1132]	Iter 54999  lr 2.8143385534380006e-06  Loss 5.1168 (5.7267)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:17:04 - INFO - Epoch: [24][432/1132]	Iter 55199  lr 2.8143385534380006e-06  Loss 4.9127 (5.8831)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:17:41 - INFO - Epoch: [24][532/1132]	Iter 55399  lr 2.8143385534380006e-06  Loss 6.8609 (5.8807)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:18:17 - INFO - Epoch: [24][632/1132]	Iter 55599  lr 2.8143385534380006e-06  Loss 7.5656 (5.8151)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:18:54 - INFO - Epoch: [24][732/1132]	Iter 55799  lr 2.8143385534380006e-06  Loss 2.9399 (5.7870)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:19:30 - INFO - Epoch: [24][832/1132]	Iter 55999  lr 2.8143385534380006e-06  Loss 3.5716 (5.7898)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:20:06 - INFO - Epoch: [24][932/1132]	Iter 56199  lr 2.8143385534380006e-06  Loss 8.6726 (5.8282)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:20:43 - INFO - Epoch: [24][1032/1132]	Iter 56399  lr 2.8143385534380006e-06  Loss 4.0306 (5.8114)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:21:19 - INFO - Epoch: [24][1132/1132]	Iter 56599  lr 2.8143385534380006e-06  Loss 5.8945 (5.8247)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:21:21 - INFO - Test: [0/40]		Batch-Time 1.281 (1.281)	
+2026-06-17 04:21:29 - INFO - calculate similarity time: 0.065
+2026-06-17 04:21:29 - INFO - Image to text (R@1, R@5, R@10): 85.7, 98.0, 99.2
+2026-06-17 04:21:29 - INFO - Text to image (R@1, R@5, R@10): 71.9, 92.4, 95.8
+2026-06-17 04:21:29 - INFO - Current rsum is 543.0
+2026-06-17 04:21:29 - INFO - Epoch: [24], Best rsum: 543.0 
+
+2026-06-17 04:21:31 - INFO - Epoch 25: LR adjusted to 2.27e-06 (base: 2.00e-04)
+2026-06-17 04:22:08 - INFO - Epoch: [25][100/1132]	Iter 56799  lr 2.2727586640478324e-06  Loss 6.0959 (5.5970)	Batch-Time 0.36 (0.37)	Data 0.009 (0.019)	
+2026-06-17 04:22:45 - INFO - Epoch: [25][200/1132]	Iter 56999  lr 2.2727586640478324e-06  Loss 4.5548 (5.6596)	Batch-Time 0.38 (0.37)	Data 0.009 (0.014)	
+2026-06-17 04:23:21 - INFO - Epoch: [25][300/1132]	Iter 57199  lr 2.2727586640478324e-06  Loss 5.6753 (5.6660)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:23:58 - INFO - Epoch: [25][400/1132]	Iter 57399  lr 2.2727586640478324e-06  Loss 5.3362 (5.6148)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:24:34 - INFO - Epoch: [25][500/1132]	Iter 57599  lr 2.2727586640478324e-06  Loss 11.1638 (5.6436)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:25:11 - INFO - Epoch: [25][600/1132]	Iter 57799  lr 2.2727586640478324e-06  Loss 4.1479 (5.6135)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:25:47 - INFO - Epoch: [25][700/1132]	Iter 57999  lr 2.2727586640478324e-06  Loss 7.9018 (5.5533)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:26:23 - INFO - Epoch: [25][800/1132]	Iter 58199  lr 2.2727586640478324e-06  Loss 8.4260 (5.4980)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:27:00 - INFO - Epoch: [25][900/1132]	Iter 58399  lr 2.2727586640478324e-06  Loss 8.7746 (5.5393)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:27:36 - INFO - Epoch: [25][1000/1132]	Iter 58599  lr 2.2727586640478324e-06  Loss 7.7447 (5.5317)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:28:12 - INFO - Epoch: [25][1100/1132]	Iter 58799  lr 2.2727586640478324e-06  Loss 4.7622 (5.5216)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:28:25 - INFO - Test: [0/40]		Batch-Time 1.339 (1.338)	
+2026-06-17 04:28:34 - INFO - calculate similarity time: 0.069
+2026-06-17 04:28:34 - INFO - Image to text (R@1, R@5, R@10): 86.5, 97.7, 99.1
+2026-06-17 04:28:34 - INFO - Text to image (R@1, R@5, R@10): 71.9, 92.5, 95.8
+2026-06-17 04:28:34 - INFO - Current rsum is 543.6
+2026-06-17 04:28:34 - INFO - Epoch: [25], Best rsum: 543.6 
+
+2026-06-17 04:28:36 - INFO - Epoch 26: LR adjusted to 1.82e-06 (base: 2.00e-04)
+2026-06-17 04:29:01 - INFO - Epoch: [26][68/1132]	Iter 58999  lr 1.8213181523952908e-06  Loss 8.4319 (5.1713)	Batch-Time 0.36 (0.38)	Data 0.009 (0.022)	
+2026-06-17 04:29:37 - INFO - Epoch: [26][168/1132]	Iter 59199  lr 1.8213181523952908e-06  Loss 6.6140 (5.1057)	Batch-Time 0.36 (0.37)	Data 0.009 (0.014)	
+2026-06-17 04:30:14 - INFO - Epoch: [26][268/1132]	Iter 59399  lr 1.8213181523952908e-06  Loss 6.6284 (5.3544)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:30:50 - INFO - Epoch: [26][368/1132]	Iter 59599  lr 1.8213181523952908e-06  Loss 3.6376 (5.2683)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:31:26 - INFO - Epoch: [26][468/1132]	Iter 59799  lr 1.8213181523952908e-06  Loss 6.0013 (5.3325)	Batch-Time 0.36 (0.36)	Data 0.009 (0.011)	
+2026-06-17 04:32:02 - INFO - Epoch: [26][568/1132]	Iter 59999  lr 1.8213181523952908e-06  Loss 4.3996 (5.3246)	Batch-Time 0.36 (0.36)	Data 0.009 (0.011)	
+2026-06-17 04:32:39 - INFO - Epoch: [26][668/1132]	Iter 60199  lr 1.8213181523952908e-06  Loss 5.8453 (5.3092)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:33:15 - INFO - Epoch: [26][768/1132]	Iter 60399  lr 1.8213181523952908e-06  Loss 6.6070 (5.3195)	Batch-Time 0.37 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:33:52 - INFO - Epoch: [26][868/1132]	Iter 60599  lr 1.8213181523952908e-06  Loss 4.5098 (5.3542)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:34:28 - INFO - Epoch: [26][968/1132]	Iter 60799  lr 1.8213181523952908e-06  Loss 9.7270 (5.3596)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:35:04 - INFO - Epoch: [26][1068/1132]	Iter 60999  lr 1.8213181523952908e-06  Loss 4.7958 (5.3515)	Batch-Time 0.37 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:35:29 - INFO - Test: [0/40]		Batch-Time 1.285 (1.285)	
+2026-06-17 04:35:37 - INFO - calculate similarity time: 0.062
+2026-06-17 04:35:37 - INFO - Image to text (R@1, R@5, R@10): 86.0, 97.6, 99.3
+2026-06-17 04:35:37 - INFO - Text to image (R@1, R@5, R@10): 71.7, 92.5, 95.9
+2026-06-17 04:35:37 - INFO - Current rsum is 542.9
+2026-06-17 04:35:37 - INFO - Epoch: [26], Best rsum: 543.6 
+
+2026-06-17 04:35:37 - INFO - Epoch 27: LR adjusted to 1.46e-06 (base: 2.00e-04)
+2026-06-17 04:35:52 - INFO - Epoch: [27][36/1132]	Iter 61199  lr 1.4649630951960416e-06  Loss 5.6312 (5.1595)	Batch-Time 0.37 (0.40)	Data 0.009 (0.041)	
+2026-06-17 04:36:29 - INFO - Epoch: [27][136/1132]	Iter 61399  lr 1.4649630951960416e-06  Loss 4.4261 (5.1713)	Batch-Time 0.36 (0.38)	Data 0.009 (0.017)	
+2026-06-17 04:37:05 - INFO - Epoch: [27][236/1132]	Iter 61599  lr 1.4649630951960416e-06  Loss 6.0476 (5.2509)	Batch-Time 0.36 (0.37)	Data 0.009 (0.014)	
+2026-06-17 04:37:42 - INFO - Epoch: [27][336/1132]	Iter 61799  lr 1.4649630951960416e-06  Loss 4.1642 (5.2307)	Batch-Time 0.37 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:38:18 - INFO - Epoch: [27][436/1132]	Iter 61999  lr 1.4649630951960416e-06  Loss 4.1747 (5.2029)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:38:55 - INFO - Epoch: [27][536/1132]	Iter 62199  lr 1.4649630951960416e-06  Loss 3.2362 (5.2590)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:39:32 - INFO - Epoch: [27][636/1132]	Iter 62399  lr 1.4649630951960416e-06  Loss 3.8109 (5.2232)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:40:08 - INFO - Epoch: [27][736/1132]	Iter 62599  lr 1.4649630951960416e-06  Loss 5.9864 (5.2700)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:40:45 - INFO - Epoch: [27][836/1132]	Iter 62799  lr 1.4649630951960416e-06  Loss 5.6474 (5.2816)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:41:22 - INFO - Epoch: [27][936/1132]	Iter 62999  lr 1.4649630951960416e-06  Loss 3.3594 (5.2930)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:41:58 - INFO - Epoch: [27][1036/1132]	Iter 63199  lr 1.4649630951960416e-06  Loss 5.0891 (5.2769)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:42:34 - INFO - Test: [0/40]		Batch-Time 1.476 (1.476)	
+2026-06-17 04:42:42 - INFO - calculate similarity time: 0.063
+2026-06-17 04:42:43 - INFO - Image to text (R@1, R@5, R@10): 85.5, 97.8, 99.2
+2026-06-17 04:42:43 - INFO - Text to image (R@1, R@5, R@10): 72.0, 92.4, 95.9
+2026-06-17 04:42:43 - INFO - Current rsum is 542.8
+2026-06-17 04:42:43 - INFO - Epoch: [27], Best rsum: 543.6 
+
+2026-06-17 04:42:43 - INFO - Epoch 28: LR adjusted to 1.21e-06 (base: 2.00e-04)
+2026-06-17 04:42:45 - INFO - Epoch: [28][4/1132]	Iter 63399  lr 1.207597793028846e-06  Loss 6.4069 (5.1213)	Batch-Time 0.36 (0.62)	Data 0.009 (0.263)	
+2026-06-17 04:43:21 - INFO - Epoch: [28][104/1132]	Iter 63599  lr 1.207597793028846e-06  Loss 3.7069 (5.2935)	Batch-Time 0.37 (0.37)	Data 0.009 (0.019)	
+2026-06-17 04:43:58 - INFO - Epoch: [28][204/1132]	Iter 63799  lr 1.207597793028846e-06  Loss 6.5135 (5.2782)	Batch-Time 0.37 (0.37)	Data 0.009 (0.014)	
+2026-06-17 04:44:34 - INFO - Epoch: [28][304/1132]	Iter 63999  lr 1.207597793028846e-06  Loss 6.0485 (5.2574)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:45:10 - INFO - Epoch: [28][404/1132]	Iter 64199  lr 1.207597793028846e-06  Loss 2.9847 (5.2007)	Batch-Time 0.37 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:45:47 - INFO - Epoch: [28][504/1132]	Iter 64399  lr 1.207597793028846e-06  Loss 7.5075 (5.2810)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:46:23 - INFO - Epoch: [28][604/1132]	Iter 64599  lr 1.207597793028846e-06  Loss 4.1280 (5.2815)	Batch-Time 0.37 (0.36)	Data 0.009 (0.011)	
+2026-06-17 04:46:59 - INFO - Epoch: [28][704/1132]	Iter 64799  lr 1.207597793028846e-06  Loss 9.2364 (5.2864)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:47:36 - INFO - Epoch: [28][804/1132]	Iter 64999  lr 1.207597793028846e-06  Loss 7.3227 (5.2811)	Batch-Time 0.37 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:48:12 - INFO - Epoch: [28][904/1132]	Iter 65199  lr 1.207597793028846e-06  Loss 4.9744 (5.2584)	Batch-Time 0.37 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:48:48 - INFO - Epoch: [28][1004/1132]	Iter 65399  lr 1.207597793028846e-06  Loss 3.2020 (5.2505)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:49:25 - INFO - Epoch: [28][1104/1132]	Iter 65599  lr 1.207597793028846e-06  Loss 6.0281 (5.2628)	Batch-Time 0.36 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:49:36 - INFO - Test: [0/40]		Batch-Time 1.278 (1.278)	
+2026-06-17 04:49:45 - INFO - calculate similarity time: 0.066
+2026-06-17 04:49:45 - INFO - Image to text (R@1, R@5, R@10): 85.6, 97.9, 99.2
+2026-06-17 04:49:45 - INFO - Text to image (R@1, R@5, R@10): 71.9, 92.5, 95.9
+2026-06-17 04:49:45 - INFO - Current rsum is 543.1
+2026-06-17 04:49:45 - INFO - Epoch: [28], Best rsum: 543.6 
+
+2026-06-17 04:49:45 - INFO - Epoch 29: LR adjusted to 1.05e-06 (base: 2.00e-04)
+2026-06-17 04:50:12 - INFO - Epoch: [29][72/1132]	Iter 65799  lr 1.0520419940014037e-06  Loss 4.0311 (5.1611)	Batch-Time 0.37 (0.38)	Data 0.009 (0.023)	
+2026-06-17 04:50:49 - INFO - Epoch: [29][172/1132]	Iter 65999  lr 1.0520419940014037e-06  Loss 4.0104 (5.1540)	Batch-Time 0.36 (0.37)	Data 0.009 (0.015)	
+2026-06-17 04:51:25 - INFO - Epoch: [29][272/1132]	Iter 66199  lr 1.0520419940014037e-06  Loss 2.2668 (5.0976)	Batch-Time 0.36 (0.37)	Data 0.009 (0.013)	
+2026-06-17 04:52:02 - INFO - Epoch: [29][372/1132]	Iter 66399  lr 1.0520419940014037e-06  Loss 2.6598 (5.1127)	Batch-Time 0.36 (0.37)	Data 0.009 (0.012)	
+2026-06-17 04:52:38 - INFO - Epoch: [29][472/1132]	Iter 66599  lr 1.0520419940014037e-06  Loss 4.5992 (5.0381)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:53:14 - INFO - Epoch: [29][572/1132]	Iter 66799  lr 1.0520419940014037e-06  Loss 4.3878 (5.0583)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:53:51 - INFO - Epoch: [29][672/1132]	Iter 66999  lr 1.0520419940014037e-06  Loss 7.2250 (5.1021)	Batch-Time 0.36 (0.37)	Data 0.009 (0.011)	
+2026-06-17 04:54:27 - INFO - Epoch: [29][772/1132]	Iter 67199  lr 1.0520419940014037e-06  Loss 5.6332 (5.1423)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:55:03 - INFO - Epoch: [29][872/1132]	Iter 67399  lr 1.0520419940014037e-06  Loss 6.5960 (5.1599)	Batch-Time 0.36 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:55:40 - INFO - Epoch: [29][972/1132]	Iter 67599  lr 1.0520419940014037e-06  Loss 5.8260 (5.1570)	Batch-Time 0.37 (0.37)	Data 0.009 (0.010)	
+2026-06-17 04:56:16 - INFO - Epoch: [29][1072/1132]	Iter 67799  lr 1.0520419940014037e-06  Loss 6.5753 (5.1813)	Batch-Time 0.38 (0.36)	Data 0.009 (0.010)	
+2026-06-17 04:56:39 - INFO - Test: [0/40]		Batch-Time 1.421 (1.421)	
+2026-06-17 04:56:48 - INFO - calculate similarity time: 0.073
+2026-06-17 04:56:48 - INFO - Image to text (R@1, R@5, R@10): 85.5, 97.9, 99.2
+2026-06-17 04:56:48 - INFO - Text to image (R@1, R@5, R@10): 71.8, 92.6, 95.8
+2026-06-17 04:56:48 - INFO - Current rsum is 542.8
+2026-06-17 04:56:48 - INFO - Epoch: [29], Best rsum: 543.6 
+
